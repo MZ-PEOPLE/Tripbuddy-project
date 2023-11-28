@@ -1,4 +1,4 @@
-import styles from "./NavBar.module.css";
+import styles from "./TopBar.module.css";
 
 const Topbar = ({ leftContent, middleContent, rightContent, next }) => {
   return (

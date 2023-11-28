@@ -1,5 +1,5 @@
-const logo = () => {
+const Logo = () => {
   return <img src="/img/title.png" />;
 };
 
-export default logo;
+export default Logo;
