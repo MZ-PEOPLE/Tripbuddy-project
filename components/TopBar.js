@@ -1,6 +1,6 @@
 import styles from "./NavBar.module.css";
 
-export default function NavBar({ leftContent, middleContent, rightContent, next }) {
+const Topbar = ({ leftContent, middleContent, rightContent, next }) => {
   return (
     <nav>
       <div className={styles.Header}>
@@ -11,4 +11,6 @@ export default function NavBar({ leftContent, middleContent, rightContent, next 
       {next}
     </nav>
   );
-}
+};
+
+export default Topbar;
