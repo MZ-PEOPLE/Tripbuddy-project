@@ -1,7 +1,7 @@
-import NavBar from "@/components/TopBar";
-import BackBtn from "@/components/BackButton";
-import LoginCheck from "@/components/LoginCheck";
-import Logo from "@/components/logo";
+import NavBar from "@/components/topbar/TopBar";
+import BackBtn from "@/components/topbar/BackButton";
+import LoginCheck from "@/components/topbar/LoginCheck";
+import Logo from "@/components/topbar/logo";
 
 export default function Home() {
   return (
