@@ -1,4 +1,4 @@
-import NavBar from "@/components/NavBar";
+import NavBar from "@/components/TopBar";
 import BackBtn from "@/components/BackButton";
 import LoginCheck from "@/components/LoginCheck";
 import Logo from "@/components/logo";
