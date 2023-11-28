@@ -6,11 +6,7 @@ import Logo from "@/components/topbar/Logo";
 export default function Home() {
   return (
     <>
-      <NavBar
-        leftContent={<BackBtn />}
-        middleContent={<Logo />}
-        rightContent={<LoginCheck />}
-      />
+      <NavBar leftContent={<BackBtn />} middleContent={<Logo />} rightContent={<LoginCheck />} />
     </>
   );
 }
