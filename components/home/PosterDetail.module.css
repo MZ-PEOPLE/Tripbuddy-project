@@ -1,0 +1,12 @@
+.infoBox {
+  display: flex;
+  background-color: rgb(238, 238, 238);
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.items {
+  margin: 0px 25px;
+}
