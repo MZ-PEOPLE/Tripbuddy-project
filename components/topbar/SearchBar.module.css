@@ -1,0 +1,29 @@
+.contentBox {
+  display: flex;
+  justify-content: center;
+}
+
+.searchBox {
+  width: 85%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.searchBar {
+  width: 100%;
+  text-align: center;
+  height: 32px;
+  border-radius: 100px;
+  background-color: rgb(241, 238, 238);
+  margin: 8px 0px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
+}
