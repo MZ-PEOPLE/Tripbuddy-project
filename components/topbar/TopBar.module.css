@@ -1,6 +1,40 @@
 .Header {
+  top: 0px;
+  width: 100%;
+  position: absolute;
+  display: block;
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.Header_border {
+  height: 43px;
+}
+
+.Header_border_searchBar {
+  height: 92px;
+}
+
+.Header_searchTrue {
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.Header_bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.left {
+  width: 100px;
+}
+
+.right {
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
 }

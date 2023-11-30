@@ -52,6 +52,8 @@ table {
 
 /* 추가적인 버튼 스타일 초기화 */
 button {
+  height: 0px;
+  width: 0px;
   background: none;
   color: inherit;
   font: inherit;
