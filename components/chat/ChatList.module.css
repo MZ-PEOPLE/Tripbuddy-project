@@ -1,0 +1,16 @@
+.profileImg {
+    width: 60px;
+    border-radius: 20px;
+    /* border: 4px solid rgb(68, 179, 70); */
+}
+
+.idFrame {}
+
+.userFrame {
+    display: flex;
+}
+
+
+.profileId {
+    margin-left: 10px;
+}
