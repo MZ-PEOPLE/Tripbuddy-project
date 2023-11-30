@@ -5,6 +5,7 @@
   display: block;
   border-bottom: 1px solid rgb(196, 196, 196);
   background-color: white;
+  z-index: 100;
 }
 
 .Header_border {
