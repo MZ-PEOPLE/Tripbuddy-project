@@ -13,6 +13,7 @@ const Topbar = ({ leftContent, middleContent, rightContent, searchBar = false })
           </div>
           {searchBar ? <SearchBar /> : null}
         </div>
+        <div className={searchBar ? styles.Header_border_searchBar : styles.Header_border}></div>
       </div>
     </nav>
   );
