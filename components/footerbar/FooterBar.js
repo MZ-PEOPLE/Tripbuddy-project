@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaHome, FaEdit, FaComment, FaUser } from "react-icons/fa";
-import styles from "./footerBar.module.css"; // CSS 모듈 import
+import styles from "./FooterBar.module.css"; // CSS 모듈 import
 
 function FooterBar() {
   return (
