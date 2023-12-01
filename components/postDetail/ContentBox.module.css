@@ -1,0 +1,19 @@
+.Container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.textBox {
+  width: 75%;
+}
+
+.locationBox {
+  width: 85%;
+}
+
+.mapSizing {
+  width: 100%;
+  height: 300px;
+}
