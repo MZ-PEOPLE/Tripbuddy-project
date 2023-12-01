@@ -1,0 +1,28 @@
+.content_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  border-bottom: 1px;
+}
+
+.content_navbar {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.content_border {
+  font-weight: 700;
+  border-bottom: 1px solid black;
+}
+
+.content {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
