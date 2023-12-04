@@ -1,0 +1,31 @@
+.TripReviewContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.TripReviewContainer2 {
+  width: 80%;
+}
+
+.TripReviewIcon {
+  width: 20px;
+  padding: 5px 3px 3px 3px;
+}
+
+.TripReviewDetailContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.TripReviewBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(235, 235, 235);
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+}
