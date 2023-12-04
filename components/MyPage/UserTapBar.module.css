@@ -1,0 +1,52 @@
+.userProfile {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.Buttons {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.Buttons button {
+  cursor: pointer;
+}
+
+.activeTab {
+  font-weight: 700;
+  border-bottom: 1px solid rgb(109, 109, 109);
+  color: black;
+  border-radius: 2%;
+}
+
+.PostButton {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  width: 30%;
+  height: 100%;
+}
+
+.tapFalse {
+  color: grey;
+}
+
+.TogetherButton {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+
+  width: 30%;
+  height: 100%;
+}
+
+.TripReviewButton {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+
+  width: 30%;
+  height: 100%;
+}
