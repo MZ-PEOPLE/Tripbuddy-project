@@ -1,0 +1,31 @@
+.reviewContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.reviewMain {
+  width: 80%;
+}
+
+.starIcon {
+  width: 20px;
+  padding: 5px 3px 3px 3px;
+}
+
+.reviewDetailContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.reviewBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(235, 235, 235);
+  padding: 10px 10px 10px 10px;
+  border-radius: 20px;
+}
