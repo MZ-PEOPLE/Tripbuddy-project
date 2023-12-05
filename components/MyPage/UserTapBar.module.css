@@ -1,16 +1,16 @@
-.userProfile {
+.tapBarBox {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.Buttons {
+.tapButtons {
   display: flex;
   justify-content: center;
   width: 90%;
 }
 
-.Buttons button {
+.tapButtons button {
   cursor: pointer;
 }
 
@@ -21,7 +21,7 @@
   border-radius: 2%;
 }
 
-.PostButton {
+.button {
   cursor: pointer;
   padding: 10px;
   margin: 5px;
@@ -31,22 +31,4 @@
 
 .tapFalse {
   color: grey;
-}
-
-.TogetherButton {
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px;
-
-  width: 30%;
-  height: 100%;
-}
-
-.TripReviewButton {
-  cursor: pointer;
-  padding: 10px;
-  margin: 5px;
-
-  width: 30%;
-  height: 100%;
 }

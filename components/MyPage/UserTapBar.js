@@ -13,11 +13,11 @@ function UserTapBar() {
   };
 
   return (
-    <div className={styles.userProfileContainer}>
-      <div className={styles.userProfile}>
-        <div className={styles.Buttons}>
+    <div className={styles.tapBarContainer}>
+      <div className={styles.tapBarBox}>
+        <div className={styles.tapButtons}>
           <button
-            className={`${styles.PostButton} ${
+            className={`${styles.button} ${
               activeTab === 1 ? styles.activeTab : styles.tapFalse
             }`}
             onClick={() => handleTabChange(1)}
@@ -25,7 +25,7 @@ function UserTapBar() {
             게시물
           </button>{" "}
           <button
-            className={`${styles.TogetherButton} ${
+            className={`${styles.button} ${
               activeTab === 2 ? styles.activeTab : styles.tapFalse
             }`}
             onClick={() => handleTabChange(2)}
@@ -33,7 +33,7 @@ function UserTapBar() {
             동행
           </button>
           <button
-            className={`${styles.TripReviewButton} ${
+            className={`${styles.button} ${
               activeTab === 3 ? styles.activeTab : styles.tapFalse
             }`}
             onClick={() => handleTabChange(3)}
