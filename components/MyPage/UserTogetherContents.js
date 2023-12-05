@@ -18,17 +18,17 @@ function UserTogetherContents() {
   ]);
   console.log(datas);
   return (
-    <div className={styles.profileBottomContainer}>
-      <div className={styles.profileBottomPost}>
+    <div className={styles.togetherContainer}>
+      <div className={styles.togetherBox}>
         {datas.map((data, index) => (
           <>
-            <div className={styles.PostContent1}>
+            <div className={styles.togetherContent}>
               <img
                 src={data.src}
                 alt={data.alt}
-                className={styles.PostContentPic}
+                className={styles.togetherPic}
               />
-              <div className={styles.IconBoxContainer}>
+              <div className={styles.IconContainer}>
                 <div className={styles.IconBox}>
                   <img
                     src={data.icon_src}

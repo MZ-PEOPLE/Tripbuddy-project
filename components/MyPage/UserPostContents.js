@@ -18,15 +18,15 @@ function UserPostContents() {
   ]);
   console.log(datas);
   return (
-    <div className={styles.profileBottomContainer}>
-      <div className={styles.profileBottomPost}>
+    <div className={styles.postContainer}>
+      <div className={styles.post}>
         {datas.map((data, index) => (
           <>
-            <div className={styles.PostContent1}>
+            <div className={styles.postContent}>
               <img
                 src={data.src}
                 alt={data.alt}
-                className={styles.PostContentPic}
+                className={styles.postContentPic}
               />
               <div className={styles.IconBoxContainer}>
                 <div className={styles.IconBox}>

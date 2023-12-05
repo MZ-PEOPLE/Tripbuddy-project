@@ -1,26 +1,26 @@
-.TripReviewContainer {
+.reviewContainer {
   margin-top: 30px;
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.TripReviewContainer2 {
+.reviewMain {
   width: 80%;
 }
 
-.TripReviewIcon {
+.starIcon {
   width: 20px;
   padding: 5px 3px 3px 3px;
 }
 
-.TripReviewDetailContainer {
+.reviewDetailContainer {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.TripReviewBox {
+.reviewBox {
   display: flex;
   justify-content: center;
   width: 100%;

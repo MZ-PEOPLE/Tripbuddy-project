@@ -1,31 +1,21 @@
-.profileBottomContainer {
+.togetherContainer {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-.profileBottomPost {
+.togetherBox {
   display: flex;
   justify-content: space-around;
   width: 90%;
 }
 
-.profileBottomTogether {
-  display: flex;
-  justify-content: space-around;
-  width: 90%;
-}
-
-.PostContent1 {
+.togetherContent {
   position: relative;
 }
 
-.postContent2 {
-  position: relative;
-}
-
-.PostContentPic {
+.togetherPic {
   width: 170px;
   border-radius: 5%;
   height: 113.25px;
