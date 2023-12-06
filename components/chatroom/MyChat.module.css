@@ -1,0 +1,44 @@
+.chatInfo {
+    display: flex;
+    margin: 20px 0 0 5px;
+}
+
+.chatFrame {
+    margin: 10px 0px 100px 10px;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.userChatInfo {
+    display: flex;
+    margin: 10px 0 0px 0px;
+}
+
+.userChatContext {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: fit-content;
+    background-color: rgb(64, 156, 249);
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+
+}
+
+.contextFrame {
+    padding: 10px;
+}
+
+.unreadCount {
+    font-size: 10px;
+    padding-left: 10px;
+    padding-top: 15px;
+    font-weight: bold;
+}
+
+.chatTime {
+    font-size: 10px;
+    padding-top: 15px;
+}
