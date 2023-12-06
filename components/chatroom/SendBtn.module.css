@@ -1,0 +1,11 @@
+.sendBtn {
+    background-color: #bbbbbb;
+    color: #ffffff;
+    padding: 10px 40px 30px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+
+
+}
