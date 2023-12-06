@@ -1,0 +1,41 @@
+.msgButton {
+    background-color: rgb(26, 128, 230);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    width: fit-content;
+    height: inherit;
+    border-radius: 10px;
+    padding: 15px 20px;
+    text-decoration: none;
+
+
+}
+
+.buttonFrame {
+
+    display: flex;
+    justify-content: flex-end;
+    margin: 200px 10px;
+    position: fixed;
+    right: 0;
+
+}
+
+.infoMsg {
+    border-top: 1px solid rgb(166, 162, 162);
+    padding: 10px 0 0 10px;
+    text-align: center;
+    justify-content: space-between;
+
+
+}
+
+.link {
+    text-decoration: none;
+}
+
+.bottomUserFrame {
+    margin: 0 10px;
+
+}
