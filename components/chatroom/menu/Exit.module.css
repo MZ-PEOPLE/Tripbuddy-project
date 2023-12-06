@@ -1,0 +1,7 @@
+.exitChat {
+    background-color: rgb(98, 101, 91);
+    font-size: 40px;
+    position: fixed;
+    bottom: 50px;
+    margin-left: 20px;
+}

@@ -1,0 +1,16 @@
+.frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+}
+
+.reviewbtn {
+    text-align: center;
+    background-color: rgb(225, 225, 225);
+    border-radius: 20px;
+    width: fit-content;
+    font-size: 20px;
+    padding: 10px;
+
+}
