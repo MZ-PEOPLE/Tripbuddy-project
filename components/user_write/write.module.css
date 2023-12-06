@@ -1,0 +1,101 @@
+
+.writeContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.writeTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.inputField,
+.textareaField,
+.fileInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
+.selectBox {
+  display: flex;
+  justify-content: center;
+}
+.selectBox button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.submitButton {
+  padding: 12px 24px; 
+  background-color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #e0e0e0;
+}
+
+.imageContainer {
+  max-width: 100px;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.textareaField {
+  height: 200px; 
+  resize: vertical;
+}
+
+
+/* 모바일 화면 */
+@media screen and (max-width: 767px) {
+  .writeContainer {
+    padding: 10px;
+  }
+
+  .inputField,
+  .textareaField,
+  .fileInput {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; 
+  }
+
+  .buttonBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; 
+    margin-bottom: 15px; 
+  }
+
+  .selectBox {
+    display: flex;
+    justify-content: center;
+  }
+}
