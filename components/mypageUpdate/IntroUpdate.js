@@ -16,16 +16,16 @@ export default function IntroUpdate() {
     };
     return (
         <div className={styles.introFrame}>
-            <div className={styles.profileIntro}>한줄소개</div>
-
-            <input
-                type="text"
-                className={styles.introUpdate}
-                value={newIntro}
-                onChange={handleIntroChange}
-                ref={introInputRef}
-            />
-            <button className={styles.introBtn} onClick={introUpdateClick}> <RxPencil1 /></button>
+            <div className={styles.profileIntro}>한줄소개
+                <input
+                    type="text"
+                    className={styles.introUpdate}
+                    value={newIntro}
+                    onChange={handleIntroChange}
+                    ref={introInputRef}
+                />
+                <button className={styles.introBtn} onClick={introUpdateClick}> <RxPencil1 /></button>
+            </div>
 
         </div>
     )
