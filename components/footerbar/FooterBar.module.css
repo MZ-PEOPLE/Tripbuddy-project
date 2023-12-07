@@ -1,60 +1,63 @@
 .footerNav {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: rgb(215, 215, 215);
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(215, 215, 215);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
-  
+
 .footerNav li {
-    text-align: center;
-    padding: 10px;
+  text-align: center;
+  padding: 10px;
 }
 
 .footerNav a {
-    text-decoration: none; 
-    color: #333; 
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
 }
-  
+
 /* 텍스트에 마우스 갖다대면 색상 변경 */
 .footerNav a:hover {
-    color: #ffffff;
-    text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .footerNav div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-  
+
 .footerNav svg {
-    margin-bottom: 5px; /* 아이콘과 텍스트 간격 조정 */
+  margin-bottom: 5px; /* 아이콘과 텍스트 간격 조정 */
 }
 
 /* 반응형 */
 @media screen and (max-width: 768px) {
-    .footerNav {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  
-    .footerNav li {
-      padding: 10px;
-      flex: 0 0 25%; /* 아이템이 한 줄에 네개 나타나도록 크기 지정 */
-      max-width: 25%; 
-      box-sizing: border-box;
-    }
-  
-    .footerNav div {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 5px;
-    }
-  
-    .footerNav svg {
-      margin-bottom: 3px;
-    }
+  .footerNav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footerNav li {
+    padding: 10px;
+    flex: 0 0 25%; /* 아이템이 한 줄에 네개 나타나도록 크기 지정 */
+    max-width: 25%;
+    box-sizing: border-box;
+  }
+
+  .footerNav div {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .footerNav svg {
+    margin-bottom: 3px;
+  }
 }
