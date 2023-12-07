@@ -31,8 +31,8 @@ const UserPoster = () => {
     },
   ];
 
-  return Props.map((Prop) => (
-    <div className={styles.Container}>
+  return Props.map((Prop, index) => (
+    <div className={styles.Container} key={index}>
       {/* 메인부모박스} */}
       <PosterImage location={Prop.location} isLike={Prop.like} imgSrc={Prop.imgSrc} />
       {/* 사진이 들어갈 박스 } */}
