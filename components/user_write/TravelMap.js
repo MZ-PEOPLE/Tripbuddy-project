@@ -3,6 +3,7 @@ import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import styles from "./TravelMap.module.css";
 
 const libraries = ["places"]; //사용 라이브러리
+const apiKey = process.env.GOOGLE_API_KEY;
 
 const defaultCenter = {
   lat: 37.5665,
@@ -14,7 +15,7 @@ const TravelMap = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedLocation, setSelectedLocation] = useState(null);
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyB2TXIm6xGMhPrOnX8cwaV_td4RUCw6Vlc", //구글API키입력
+    googleMapsApiKey: "GOOGLE_API_KEY", //구글API키입력
     libraries,
   });
 
@@ -72,7 +73,7 @@ const TravelMap = () => {
       const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           searchQuery
-        )}&key=AIzaSyB2TXIm6xGMhPrOnX8cwaV_td4RUCw6Vlc`
+        )}&key=GOOGLE_API_KEY`
       );
       const data = await response.json();
       if (data.results && data.results.length > 0) {
