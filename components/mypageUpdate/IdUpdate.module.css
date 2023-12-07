@@ -15,12 +15,11 @@
     border-radius: 20px;
     box-shadow: 2px 2px 1px rgba(95, 94, 94, 0.765);
     margin: 0px 10px 0px 0px;
-    padding: 10px 10px;
-    width: 85%;
+    width: 80%;
 
     @media (max-width: 390px) {
         width: 80%;
-        padding: 10px;
+
 
     }
 

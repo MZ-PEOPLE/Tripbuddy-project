@@ -16,16 +16,16 @@ export default function IdUpdate() {
 
     return (
         <div className={styles.idFrame}>
-            <div className={styles.profileId}>아이디</div>
-            <input
-                type="text"
-                className={styles.idUpdate}
-                value={newId}
-                onChange={handleIdChange}
-                ref={idInputRef}
-            />
-            <button className={styles.idButton} onClick={idUpdateClick}><RxPencil1 /></button>
-
+            <div className={styles.profileId}>아이디
+                <input
+                    type="text"
+                    className={styles.idUpdate}
+                    value={newId}
+                    onChange={handleIdChange}
+                    ref={idInputRef}
+                />
+                <button className={styles.idButton} onClick={idUpdateClick}><RxPencil1 /></button>
+            </div>
         </div>
     )
 }
