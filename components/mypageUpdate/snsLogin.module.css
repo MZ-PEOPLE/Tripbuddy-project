@@ -1,6 +1,9 @@
 .loginFrame {
-    margin-left: 8px;
+
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .profileLogin {
