@@ -1,0 +1,35 @@
+.loginFrame {
+    margin-left: 8px;
+    margin-top: 30px;
+}
+
+.profileLogin {
+    margin: 10px 0px 10px 40px;
+    font-size: 40px;
+
+    @media (max-width: 390px) {
+        font-size: 20px;
+    }
+
+}
+
+.loginFacebook {
+    margin-left: 40px;
+    font-size: 80px;
+    color: rgb(0, 30, 255);
+
+    @media (max-width: 390px) {
+        font-size: 40px;
+    }
+
+}
+
+.loginInstagram {
+    font-size: 80px;
+    color: rgb(226, 43, 177);
+
+    @media (max-width: 390px) {
+        font-size: 40px;
+    }
+
+}
