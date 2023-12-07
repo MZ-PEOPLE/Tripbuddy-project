@@ -35,12 +35,9 @@
 
 }
 
-.test {
-    bottom: 10px;
-}
 
 .deleteBtn {
-    font-size: 50px;
+    font-size: 40px;
 
     @media (max-width: 390px) {
         font-size: 30px;

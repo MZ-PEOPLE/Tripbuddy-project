@@ -14,7 +14,6 @@ export default function ImgUpdateBtn() {
 
     const handleFileChange = (event) => {
         const selectedFile = event.target.files[0];
-        // FileReader를 사용하여 이미지를 읽고, 이미지 데이터를 설정합니다.
         const reader = new FileReader();
         reader.onload = () => {
             const imageDataUrl = reader.result;
@@ -31,10 +30,10 @@ export default function ImgUpdateBtn() {
         <div className={styles.mainFrame}>
             <div>
                 <div className={styles.frame}>
-                    <button onClick={handleButtonClick} className={styles.test}>
+                    <button onClick={handleButtonClick} >
                         <PiCameraDuotone className={styles.imgUpdateBtn} />
                     </button>
-                    <img className={styles.profileImg} src={selectedImage} alt="프로필 사진 업로드" />
+                    <img className={styles.profileImg} src={selectedImage} />
                 </div>
             </div>
             <input
