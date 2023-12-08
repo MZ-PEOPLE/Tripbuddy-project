@@ -1,0 +1,23 @@
+.KakaoBtn {
+  width: 90%;
+  background-color: rgb(255, 230, 0);
+  border-radius: 15px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.KakaoBox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Icon {
+  position: absolute;
+  left: 25px;
+  font-size: 30px;
+}
