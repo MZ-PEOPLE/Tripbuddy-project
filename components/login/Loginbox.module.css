@@ -1,0 +1,12 @@
+.loginsize {
+  height: 48px;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.loginBox {
+  width: 100%;
+  position: fixed;
+  bottom: 30%;
+}
