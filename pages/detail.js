@@ -4,6 +4,11 @@ import UserPostInfo from "@/components/postDetail/UserPostInfo";
 import ContentNavbar from "@/components/postDetail/ContentNavbar";
 import ContentBox from "@/components/postDetail/ContentBox";
 import TravelChatBtn from "@/components/postDetail/TravelChatBtn";
+import Topbar from "@/components/topbar/TopBar";
+import BackBtn from "@/components/topbar/BackButton";
+import Logo from "@/components/topbar/Logo";
+import LoginCheck from "@/components/topbar/LoginCheck";
+import FooterBar from "@/components/footerbar/FooterBar";
 
 const Slick = () => {
   const [selectedButton, setSelectedButton] = useState("내용");
@@ -63,6 +68,7 @@ const Slick = () => {
 
   return (
     <div>
+      <Topbar leftContent={<BackBtn />} middleContent={<Logo />} rightContent={<LoginCheck />} />
       <ImageSlider imgs={imgs} />
       <UserPostInfo items={postProps} />
       <ContentNavbar
@@ -72,6 +78,7 @@ const Slick = () => {
       />
       <ContentBox items={mainContent} />
       <TravelChatBtn />
+      <FooterBar />
     </div>
   );
 };
