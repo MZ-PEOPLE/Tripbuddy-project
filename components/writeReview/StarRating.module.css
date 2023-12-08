@@ -1,0 +1,12 @@
+.starContainer {
+  display: inline-block;
+}
+
+.yellowStar {
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.yellowStar:hover {
+  transform: scale(1.2);
+}
