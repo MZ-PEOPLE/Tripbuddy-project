@@ -6,6 +6,7 @@ import styles from "./FooterBar.module.css"; // CSS 모듈 import
 function FooterBar() {
   return (
     <footer>
+      <div className={styles.containerAll}></div>
       <ul className={styles.footerNav}>
         <li>
           <Link href="/">

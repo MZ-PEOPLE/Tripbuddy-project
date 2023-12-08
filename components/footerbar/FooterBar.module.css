@@ -10,6 +10,10 @@
   width: 100%;
 }
 
+.containerAll {
+  height: 76px;
+}
+
 .footerNav li {
   text-align: center;
   padding: 10px;
