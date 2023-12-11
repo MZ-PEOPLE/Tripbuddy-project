@@ -1,41 +1,30 @@
 import React from "react";
-import Link from "next/link";
-import { FaHome, FaEdit, FaComment, FaUser } from "react-icons/fa";
-import styles from "./FooterBar.module.css"; // CSS 모듈 import
+import NavItem from "./NavItem";
+import { FaHome, FaEdit, FaComment, FaRegUserCircle } from "react-icons/fa";
+import PropTypes from "prop-types";
+import styles from "./FooterBar.module.css";
+
+const navItems = [
+  { href: "/", icon: <FaHome />, text: "홈" },
+  { href: "/write", icon: <FaEdit />, text: "글쓰기" },
+  { href: "/chat", icon: <FaComment />, text: "채팅" },
+  { href: "/mypage", icon: <FaRegUserCircle />, text: "내정보" },
+];
+
+NavItem.propTypes = {
+  href: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 function FooterBar() {
   return (
     <footer>
       <div className={styles.containerAll}></div>
       <ul className={styles.footerNav}>
-        <li>
-          <Link href="/">
-            <div>
-              <FaHome /> 홈
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="/write">
-            <div>
-              <FaEdit /> 글쓰기
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="/chat">
-            <div>
-              <FaComment /> 채팅
-            </div>
-          </Link>
-        </li>
-        <li>
-          <Link href="/mypage">
-            <div>
-              <FaUser /> 마이페이지
-            </div>
-          </Link>
-        </li>
+        {navItems.map((item, index) => (
+          <NavItem key={index} {...item} />
+        ))}
       </ul>
     </footer>
   );
