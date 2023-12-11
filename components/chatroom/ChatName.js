@@ -1,5 +1,5 @@
-// import styles from "./ChatBar.module.css";
-// import { IoMenu } from "react-icons/io5";
+import styles from "./ChatBar.module.css";
+import { IoMenu } from "react-icons/io5";
 
 
 export default function ChatBar() {
