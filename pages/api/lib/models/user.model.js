@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema(
     age: { type: Number, required: true },
     name: { type: String, required: true, maxlength: 10 },
     about: { type: String, default: "", maxlength: 30 },
+    gender: { type: String },
     profileImage: { type: String },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],
     rating: { type: Number, default: 0 },
