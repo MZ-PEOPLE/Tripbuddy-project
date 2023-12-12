@@ -18,7 +18,13 @@ const Kakao = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ id, nickname, profile_image, age: 20 }),
+        body: JSON.stringify({
+          id,
+          nickname,
+          profile_image,
+          age: 20,
+          gender: "중성",
+        }),
       });
       const data = await res.json();
       console.log(id, nickname, profile_image, response);
