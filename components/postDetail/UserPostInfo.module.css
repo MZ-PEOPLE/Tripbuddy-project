@@ -26,9 +26,6 @@
   margin-left: 5px;
 }
 
-.post_iconSize {
-  font-size: 23px;
-}
 
 .post_location {
   display: flex;
@@ -61,6 +58,7 @@
   font-weight: 700;
   font-size: 17px;
 }
+
 .userInfoDetail {
   margin-left: 10px;
 }
