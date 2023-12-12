@@ -15,7 +15,7 @@ export default function Home({ user }) {
         searchBar={true}
       />
       <UserPoster />
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }

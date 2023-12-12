@@ -7,3 +7,9 @@
   font-size: 14px;
   color: rgb(90, 89, 89);
 }
+
+.iconSize img {
+  height: 27px;
+  width: 27px;
+  border-radius: 100%;
+}
