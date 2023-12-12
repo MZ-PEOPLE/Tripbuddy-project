@@ -1,5 +1,5 @@
 import styles from "./PosterImageBox.module.css";
-import { BsFillSuitHeartFill } from "react-icons/bs";
+import HeartIconToggle from "../postDetail/HeartIconToggle";
 import { LuMapPin } from "react-icons/lu";
 
 const PosterImage = ({ location, isLike, imgSrc }) => {
@@ -12,9 +12,7 @@ const PosterImage = ({ location, isLike, imgSrc }) => {
           <div className={styles.location}>{location}</div>
         </div>
         <div className={styles.likeBtn}>
-          <BsFillSuitHeartFill
-            className={`${styles.likeStyle} ${isLike ? styles.likeTrue : styles.likeFalse}`}
-          />
+          <HeartIconToggle />
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import styles from "./UserPostInfo.module.css";
 import { FaUserGroup } from "react-icons/fa6";
-import { FaRegHeart } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
+import HeartIconToggle from "./HeartIconToggle";
 
 /* 추후 컴포넌트 분리작업 이 필요한 것 같음
 비대하진 않으나 무슨작업을 하는지 잘 모르겠음
@@ -16,7 +16,7 @@ const UserPost = ({ items }) => (
           <span className={styles.post_info_fontSize}>{items.numberOfPeople}</span>
         </div>
         <div className={styles.post_iconBox}>
-          <FaRegHeart className={`${styles.post_iconSize} ${styles.post_heart_icon}`} />
+          <HeartIconToggle />
           {/* 하트를 이모티콘이 아닌 버튼으로 교체작업 필요 + 클릭 true일때 빨간하트, false일때 회색
           백엔드 작업이 되었을땐 유저가 좋아요를 눌렀는지 호출 필요 */}
           <span className={styles.post_info_fontSize}>{items.like}</span>
