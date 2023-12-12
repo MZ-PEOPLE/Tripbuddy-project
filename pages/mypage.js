@@ -1,5 +1,8 @@
 import MyPageProfileDetail from "@/components/MyPage/UserProfileDetail";
 import MyPageUserTapBar from "@/components/MyPage/UserTapBar";
+import BackBtn from "@/components/topbar/BackButton";
+import LoginCheck from "@/components/topbar/LoginCheck";
+import Topbar from "@/components/topbar/TopBar";
 import { useRouter } from "next/router";
 
 export default function MyPageContainer({ user }) {
@@ -11,6 +14,11 @@ export default function MyPageContainer({ user }) {
   }
   return (
     <>
+      <Topbar
+        leftContent={<BackBtn />}
+        middleContent={user.name}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
+      />
       <MyPageProfileDetail user={user} />
       <MyPageUserTapBar userid={user.id} />
     </>
