@@ -59,7 +59,8 @@
 }
 
 .ModifyIcon {
-  width: 20px;
+  margin-top: 3px;
+  width: 30px;
 }
 
 .ModifyText {

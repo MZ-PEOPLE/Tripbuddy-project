@@ -1,4 +1,5 @@
 import styles from "./UserProfileDetail.module.css";
+import CgProfile from "@react-icons/all-files";
 
 function UserProfileDetail({ user }) {
   console.log(user, "UserProfileDetail");
@@ -29,11 +30,7 @@ function UserProfileDetail({ user }) {
 
       <div className={styles.profileModify}>
         <button type="button" className={styles.ModifyButton}>
-          <img
-            src="https://cdn-icons-png.flaticon.com/128/747/747376.png"
-            alt="아이콘 자리"
-            className={styles.ModifyIcon}
-          />
+          <CgProfile alt="아이콘 자리" className={styles.ModifyIcon} />
           <div className={styles.ModifyText}>프로필 수정</div>
         </button>
       </div>
