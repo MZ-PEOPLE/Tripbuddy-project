@@ -11,10 +11,19 @@ export default async function logined(req, res) {
     }
     console.log(decoded, "디코딩정보임");
 
-    const user = await User.findOne({ id: decoded.userId }).select("profileImage name -_id");
+    const user = await User.findOne({ id: decoded.userId }).select(
+      "profileImage name age about id gender -_id"
+    );
     // 이미지, 이름 반환 + 고유 아이디 반환 X
     console.log("성공!", user);
-    return res.status(200).json({ profileImage: user.profileImage });
+    return res.status(200).json({
+      id: user.id,
+      profileImage: user.profileImage,
+      age: user.age,
+      name: user.name,
+      about: user.about,
+      gender: user.gender,
+    });
   } else {
     console.log("실패~");
     res.status(405).end();
