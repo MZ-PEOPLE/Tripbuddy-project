@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import DateSelect from "../components/user_write/DateSelect";
 import GenderAgeSelect from "../components/user_write/GenderAgeSelect";
+import HeadcountSelect from "@/components/user_write/HeadcountSelect";
 import Navbar from "../components/topbar/TopBar";
 import FooterBar from "../components/footerbar/FooterBar";
 import BackBtn from "@/components/topbar/BackButton";
@@ -17,6 +18,7 @@ export default function Write() {
   const [selectedFiles, setSelectedFiles] = useState([]); //선택된 이미지파일 목록
   const [startDate, setStartDate] = useState(null); //여행 시작 날짜
   const [endDate, setEndDate] = useState(null); //여행 종료 날짜
+  const [headCounts, setHeadCounts] = useState(""); //인원수
   const [gender, setGender] = useState(""); //성별
   const [ageRange, setAgeRange] = useState(""); //나이대
   const [travelMapData, setTravelMapData] = useState(null); //여행지도 데이터
@@ -67,6 +69,10 @@ export default function Write() {
     setAgeRange(selectedAgeRange);
   };
 
+  const handleHeadData = ({ selectedHead }) => {
+    setHeadCounts(selectedHead);
+  };
+
   //글 작성 후 서버로 전송 함수
   const handleSubmit = () => {
     const postData = {
@@ -75,6 +81,7 @@ export default function Write() {
       image: selectedFiles,
       dateSelectData: { startDate: startDate, endDate: endDate },
       genderAgeSelectData: { gender: gender, ageRange: ageRange },
+      headSelectData: { headCounts: headCounts },
       travelMapData: travelMapData,
     };
 
@@ -140,6 +147,10 @@ export default function Write() {
           <DateSelect handleData={handleDataSelection} dataType="date" />
         </div>
 
+        <h2 className={styles.writeTitle}>몇명?</h2>
+        <div className={styles.selectBox}>
+          <HeadcountSelect handleData={handleHeadData} dataType="headCounts" />
+        </div>
         <h2 className={styles.writeTitle}>성별과 나이는?</h2>
         <div className={styles.selectBox}>
           <GenderAgeSelect
