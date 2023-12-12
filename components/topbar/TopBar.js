@@ -6,7 +6,7 @@ const Topbar = ({ leftContent, middleContent, rightContent, searchBar = false })
     <nav>
       <div className={styles.container}>
         <div className={`${styles.Header} ${searchBar ? styles.Header_searchTrue : null}`}>
-          <div className={styles.Header_bar}>
+          <div className={`${styles.Header_bar} ${styles.Header_border}`}>
             <div className={styles.left}>{leftContent}</div>
             <div className={styles.middle}>{middleContent}</div>
             <div className={styles.right}>{rightContent}</div>
