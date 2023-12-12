@@ -8,12 +8,14 @@ function UserPostContents() {
       icon_src: "https://cdn-icons-png.flaticon.com/128/2340/2340091.png",
       alt: "강릉 사진",
       title: "강릉",
+      date: "12월 3일 ~ 12월 5일",
     },
     {
       src: "https://mediahub.seoul.go.kr/wp-content/uploads/2015/01/f9ca3f3426800ac74efd7cd16c38d42f.jpg",
       icon_src: "https://cdn-icons-png.flaticon.com/128/2340/2340091.png",
       alt: "서울 사진",
       title: "서울",
+      date: "12월 20일 ~ 12월 26일",
     },
   ]);
   console.log(datas);
@@ -28,6 +30,7 @@ function UserPostContents() {
                 alt={data.alt}
                 className={styles.postContentPic}
               />
+              <div className={styles.hiddenText}>{data.date}</div>
               <div className={styles.IconBoxContainer}>
                 <div className={styles.IconBox}>
                   <img
