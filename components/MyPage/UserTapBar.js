@@ -4,7 +4,8 @@ import UserTogetherContents from "./UserTogetherContents.js";
 import UserReview from "./UserReview.js";
 import React, { useState } from "react";
 
-function UserTapBar() {
+function UserTapBar({ userid }) {
+  console.log(userid, "UserTapBar.js");
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabChange = (tabNumber) => {
