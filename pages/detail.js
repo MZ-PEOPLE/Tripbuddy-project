@@ -10,7 +10,7 @@ import Logo from "@/components/topbar/Logo";
 import LoginCheck from "@/components/topbar/LoginCheck";
 import FooterBar from "@/components/footerbar/FooterBar";
 
-const Slick = () => {
+const Slick = ({ user }) => {
   const [selectedButton, setSelectedButton] = useState("내용");
   const [ContentId, setContentId] = useState(0);
   const [mainContent, setMainContent] = useState(0);
@@ -68,7 +68,11 @@ const Slick = () => {
 
   return (
     <div>
-      <Topbar leftContent={<BackBtn />} middleContent={<Logo />} rightContent={<LoginCheck />} />
+      <Topbar
+        leftContent={<BackBtn />}
+        middleContent={<Logo />}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
+      />
       <ImageSlider imgs={imgs} />
       <UserPostInfo items={postProps} />
       <ContentNavbar
@@ -78,7 +82,7 @@ const Slick = () => {
       />
       <ContentBox items={mainContent} />
       <TravelChatBtn />
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </div>
   );
 };

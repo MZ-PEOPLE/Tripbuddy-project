@@ -12,7 +12,7 @@ import TravelMap from "@/components/user_write/TravelMap";
 import styles from "../components/user_write/write.module.css";
 import { FaCamera, FaRegTrashAlt } from "react-icons/fa";
 
-export default function Write() {
+export default function Write({ user }) {
   const [title, setTitle] = useState(""); //글제목
   const [content, setContent] = useState(""); //글내용
   const [selectedFiles, setSelectedFiles] = useState([]); //선택된 이미지파일 목록
@@ -95,7 +95,7 @@ export default function Write() {
       <Navbar
         leftContent={<BackBtn />}
         middleContent={<Logo />}
-        rightContent={<LoginCheck />}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <div className={styles.writeContainer}>
         <h2 className={styles.writeTitle}>글 작성</h2>
@@ -165,7 +165,7 @@ export default function Write() {
           </button>
         </div>
       </div>
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }
