@@ -1,0 +1,21 @@
+.post_iconSize {
+    font-size: 25px;
+}
+
+.post_heart_icon {
+    color: red;
+    animation: beatAnimation 0.5s 1;
+}
+
+
+@keyframes beatAnimation {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+}
