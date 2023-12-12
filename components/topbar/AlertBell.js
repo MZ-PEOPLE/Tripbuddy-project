@@ -1,12 +1,11 @@
 import Link from "next/link";
 import styles from "./AlertBell.module.css";
+import { FaRegBell } from "react-icons/fa";
 
 const AlertBell = () => {
-  const img_src = "/img/bell.png";
-
   return (
     <Link href="/alert">
-      <img src={img_src} className={styles.imgs}></img>
+      <FaRegBell className={styles.imgs} />
     </Link>
   );
 };
