@@ -14,13 +14,13 @@ const HeartIconToggle = () => {
   return (
     <>
       {isClicked ?
-        (<FaRegHeart
-          className={`${styles.post_iconSize}`}
+        (<FaHeart
+          className={`${styles.post_iconSize} ${styles.post_heart_icon}`}
           onClick={handleClick}
         />
         ) :
-        (<FaHeart
-          className={`${styles.post_iconSize} ${styles.post_heart_icon}`}
+        (<FaRegHeart
+          className={`${styles.post_iconSize}`}
           onClick={handleClick}
         />)}
       {/* 클릭된 경우:  하트 아이콘, 클릭되지 않은 경우: 빈 하트 아이콘 */}
