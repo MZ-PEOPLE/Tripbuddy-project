@@ -40,3 +40,8 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.middle {
+  font-size: 15px;
+  font-weight: 700;
+}
