@@ -5,17 +5,17 @@ import FooterBar from "@/components/footerbar/FooterBar";
 import UserPoster from "@/components/home/UserPoster";
 import Topbar from "@/components/topbar/TopBar";
 
-export default function Home() {
+export default function Home({ user }) {
   return (
     <>
       <Topbar
         leftContent={<BackBtn />}
         middleContent={<Logo />}
-        rightContent={<LoginCheck />}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
         searchBar={true}
       />
       <UserPoster />
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }
