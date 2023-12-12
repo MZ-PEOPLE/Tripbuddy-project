@@ -1,6 +1,8 @@
 import styles from "./UserProfileDetail.module.css";
 
-function UserProfileDetail() {
+function UserProfileDetail({ user }) {
+  console.log(user, "UserProfileDetail");
+
   return (
     <div>
       <div className={styles.userProfileContainer}>
@@ -9,20 +11,19 @@ function UserProfileDetail() {
             <div className={styles.profilePicContainer}>
               <img
                 className={styles.profilePic}
-                src="https://trboard.game.onstove.com/Data/TR/20170728/19/636368659390474572.jpg"
+                src={user.profileImage}
+                alt={user.name}
               />
             </div>
             <div className={styles.profileDetail}>
-              <div className={styles.Name}>치와와와와 님</div>
+              <div className={styles.Name}>{user.name}</div>
               <div className={styles.ageGenderBox}>
-                <div className={styles.age}>20대</div>
-                <div className={styles.gender}>중성화</div>
+                <div className={styles.age}>{user.age}</div>
+                <div className={styles.gender}>{user.gender}</div>
               </div>
             </div>
           </div>
-          <div className={styles.Descrip}>
-            왈왈왈! 왈!왈왈왈! 왈!왈왈왈! 왈!왈왈왈!
-          </div>
+          <div className={styles.Descrip}>{user.about}</div>
         </div>
       </div>
 
