@@ -1,5 +1,5 @@
 import styles from "./UserProfileDetail.module.css";
-import CgProfile from "@react-icons/all-files";
+import { CgProfile } from "react-icons/cg";
 
 function UserProfileDetail({ user }) {
   console.log(user, "UserProfileDetail");
@@ -10,17 +10,14 @@ function UserProfileDetail({ user }) {
         <div className={styles.userProfileBox}>
           <div className={styles.userProfile}>
             <div className={styles.profilePicContainer}>
-              <img
-                className={styles.profilePic}
-                src={user.profileImage}
-                alt={user.name}
-              />
+              <img className={styles.profilePic} src={user.profileImage} alt={user.name} />
             </div>
             <div className={styles.profileDetail}>
               <div className={styles.Name}>{user.name}</div>
               <div className={styles.ageGenderBox}>
-                <div className={styles.age}>{user.age}</div>
-                <div className={styles.gender}>{user.gender}</div>
+                <div className={styles.ageAndGender}>
+                  {user.age + "대"} {user.gender}
+                </div>
               </div>
             </div>
           </div>

@@ -7,38 +7,44 @@
 
 .togetherBox {
   display: flex;
-  justify-content: space-around;
   width: 90%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .togetherContent {
   position: relative;
+  width: 49%;
+  margin-bottom: 5px;
 }
 
 .togetherPic {
-  width: 170px;
+  width: 100%;
   border-radius: 5%;
-  height: 113.25px;
+  height: 110px;
 }
 
-.IconBox {
+.IconContainer {
   width: 70px;
   height: 20px;
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(255, 255, 255);
   border-radius: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 5px 0px 5px 0px;
   position: absolute;
-  top: 3%;
-  left: 1.5%;
+  top: 3px;
+  left: 3px;
 }
 
 .Icon {
-  width: 18px;
+  font-size: 23px;
+  color: rgb(107, 106, 106);
 }
 
 .IconText {
-  margin-left: 5px;
+  font-size: 16px;
   padding-top: 2px;
+  font-weight: 700;
 }
