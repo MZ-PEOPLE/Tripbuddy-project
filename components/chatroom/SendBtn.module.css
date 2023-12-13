@@ -1,6 +1,5 @@
 .sendBtn {
-    background-color: #bbbbbb;
-    color: #ffffff;
+    background-color: rgb(217, 217, 217);
     padding: 10px 40px 30px 10px;
     border-radius: 5px;
     cursor: pointer;
