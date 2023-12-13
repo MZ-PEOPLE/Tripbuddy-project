@@ -2,7 +2,7 @@ import styles from "./LoginContents.module.css";
 import Logo from "../topbar/Logo";
 import { ImAirplane } from "react-icons/im";
 
-const ImgSrc = "/img/loginimg6.png";
+const ImgSrc = "/img/loginimg.png";
 
 function LoginContents() {
   return (
