@@ -25,7 +25,7 @@
 }
 
 .chatContext {
-    font-size: 15px;
+    font-size: 12px;
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 100%;
