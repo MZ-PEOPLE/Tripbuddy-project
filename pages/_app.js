@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "../styles/global.css";
 import { useRouter } from "next/router";
+import "../styles/global.css";
+import Head from "next/head";
+import axios from "axios";
 
 const verifyUser = async (setUser, setLoading) => {
   try {
@@ -51,7 +52,17 @@ function MyApp({ Component, pageProps }) {
   if (loading) {
     return null; // 로딩일때
   }
-  return <Component {...pageProps} user={user} />;
+  return (
+    <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+      <Component {...pageProps} user={user} />
+    </>
+  );
 }
 
 export default MyApp;
