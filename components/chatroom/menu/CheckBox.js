@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdCheckBoxOutlineBlank, MdCheckBox } from 'react-icons/md';
+import { MdCheckBoxOutlineBlank } from 'react-icons/md';
 import { IoIosCheckboxOutline } from 'react-icons/io';
 import styles from "./CheckBox.module.css";
 const CheckBox = () => {
@@ -11,7 +11,7 @@ const CheckBox = () => {
 
     return (
         <div className={styles.checkBox} onClick={handleCheckBoxClick}>
-            {isChecked ? <IoIosCheckboxOutline /> : <MdCheckBoxOutlineBlank />}
+            {isChecked ? <IoIosCheckboxOutline className={styles.clickCheck} /> : <MdCheckBoxOutlineBlank />}
         </div>
     );
 };

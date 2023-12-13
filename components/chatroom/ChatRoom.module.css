@@ -25,10 +25,9 @@
 }
 
 .chatContext {
-    font-size: 15px;
+    font-size: 12px;
     text-overflow: ellipsis;
     overflow: hidden;
-    /* max-width: 380px; */
     max-width: 100%;
     background-color: rgb(219, 218, 218);
     border-radius: 20px;
@@ -71,7 +70,7 @@
 
 .chatInfo {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
 }
 
 .infoFrame {
