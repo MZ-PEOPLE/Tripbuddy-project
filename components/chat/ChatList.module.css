@@ -28,30 +28,17 @@
     text-overflow: ellipsis;
 
 
-    @media(max-width:390px) {
-        font-size: 12px;
-    }
-
-
-
-
 }
 
 .userFrame {
     display: flex;
     margin-left: 10px;
 
-
-
-
 }
 
 .leftFrame {
     display: flex;
     margin-top: 10px;
-
-
-
 }
 
 .rightFrame {
@@ -60,7 +47,6 @@
 
 .profileId {
     font-size: 12px;
-
 
 }
 
@@ -74,14 +60,12 @@
     padding: 1px 3px;
 
 
-
 }
 
 .chatTime {
     font-size: 12px;
     max-width: fit-content;
     text-align: center;
-    padding: 1px 0px;
     color: grey;
 
 
