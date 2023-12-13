@@ -27,7 +27,7 @@ export default function ChatListComponent() {
       profileImg: '/img/profile_test.png',
       profileId: '치와와',
       chatTime: '00:00',
-      chatContext: '여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고',
+      chatContext: '여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고',
       unreadCount: 5,
       roomid: 123,
     } //unreadCount0이고 읽으면 빨간 알람 X
