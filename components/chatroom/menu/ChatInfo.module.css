@@ -17,7 +17,7 @@
 }
 
 .dropTravel {
-    background-color: pink;
+    background-color: rgb(255, 115, 115);
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 10px;
@@ -29,7 +29,7 @@
 
 .confirmTravel {
 
-    background-color: rgb(173, 223, 230);
+    background-color: rgb(186, 230, 255);
     padding: 10px 20px;
     border-radius: 10px;
     cursor: pointer;
