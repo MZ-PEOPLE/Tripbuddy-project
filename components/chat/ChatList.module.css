@@ -1,106 +1,102 @@
 .link {
     text-decoration: none;
     display: block;
+    width: 100%;
+    color: black;
 
-    .link {
-        text-decoration: none;
-        display: block;
-        width: 100%;
-        color: black;
-
-    }
+}
 
 
 
-    .profileImg {
-        width: 40px;
-        height: 40px;
-        border-radius: 15px;
-        margin-right: 5px;
+.profileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    margin-right: 5px;
 
 
-    }
-
-
-
-    .chatContextFrame {
-        display: flex;
-        margin-top: 20px;
-
-
-        display: flex;
-        margin-top: 20px;
-
-
-    }
-
-    .chatContext {
-        font-size: 12px;
-        text-overflow: ellipsis;
+}
 
 
 
-    }
+.chatContextFrame {
+    display: flex;
+    margin-top: 20px;
 
-    .userFrame {
-        display: flex;
-        margin-left: 10px;
 
-    }
+    display: flex;
+    margin-top: 20px;
 
-    .leftFrame {
-        display: flex;
-        margin-top: 10px;
-    }
 
-    .rightFrame {
-        margin-top: 10px;
-    }
+}
 
-    .leftFrame {
-        display: flex;
-        margin-top: 10px;
-    }
-
-    .rightFrame {
-        margin-top: 10px;
-    }
-
-    .profileId {
-        font-size: 12px;
-
-        font-size: 12px;
-
-    }
-
-    .unreadCount {
-        font-size: 12px;
-        font-size: 12px;
-        background-color: #ff331c;
-        color: white;
-        border-radius: 20px;
-        max-width: fit-content;
-        text-align: center;
-        padding: 1px 3px;
+.chatContext {
+    font-size: 12px;
+    text-overflow: ellipsis;
 
 
 
-    }
+}
 
-    .chatTime {
-        font-size: 12px;
-        font-size: 12px;
-        max-width: fit-content;
-        text-align: center;
-        color: grey;
+.userFrame {
+    display: flex;
+    margin-left: 10px;
+
+}
+
+.leftFrame {
+    display: flex;
+    margin-top: 10px;
+}
+
+.rightFrame {
+    margin-top: 10px;
+}
+
+.leftFrame {
+    display: flex;
+    margin-top: 10px;
+}
+
+.rightFrame {
+    margin-top: 10px;
+}
+
+.profileId {
+    font-size: 12px;
+
+    font-size: 12px;
+
+}
+
+.unreadCount {
+    font-size: 12px;
+    font-size: 12px;
+    background-color: #ff331c;
+    color: white;
+    border-radius: 20px;
+    max-width: fit-content;
+    text-align: center;
+    padding: 1px 3px;
 
 
-        color: grey;
+
+}
+
+.chatTime {
+    font-size: 12px;
+    font-size: 12px;
+    max-width: fit-content;
+    text-align: center;
+    color: grey;
 
 
-    }
+    color: grey;
 
-    .chatTime,
-    .unreadCount {
-        margin-left: auto;
-    }
+
+}
+
+.chatTime,
+.unreadCount {
+    margin-left: auto;
+}
