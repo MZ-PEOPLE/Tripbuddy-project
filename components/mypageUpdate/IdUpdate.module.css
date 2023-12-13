@@ -5,7 +5,7 @@
 .profileId {
     font-size: 40px;
 
-    @media (max-width: 390px) {
+    @media (max-width: 400px) {
         font-size: 20px;
     }
 }
@@ -17,7 +17,7 @@
     margin: 0px 10px 0px 0px;
     width: 80%;
 
-    @media (max-width: 390px) {
+    @media (max-width: 400px) {
         width: 80%;
 
 
@@ -30,7 +30,7 @@
 .idButton {
     font-size: 50px;
 
-    @media (max-width: 390px) {
+    @media (max-width: 400px) {
         font-size: 30px;
     }
 }

@@ -1,38 +1,65 @@
 .loginFrame {
+    position: fixed;
 
-    margin-top: 30px;
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .profileLogin {
-    margin: 10px 0px 10px 40px;
+    margin: 10px 0;
     font-size: 40px;
 
-    @media (max-width: 390px) {
+    @media (max-width: 400px) {
         font-size: 20px;
     }
 
 }
 
 .loginFacebook {
-    margin-left: 40px;
-    font-size: 80px;
-    color: rgb(0, 30, 255);
+    margin: 10px 0;
+    font-size: 20px;
+    background-color: rgb(30, 56, 252);
+    padding: 15px 80px;
+    color: white;
+    border-radius: 10px;
 
-    @media (max-width: 390px) {
-        font-size: 40px;
+    @media (max-width: 400px) {
+        font-size: 20px;
     }
 
 }
 
-.loginInstagram {
-    font-size: 80px;
-    color: rgb(226, 43, 177);
+.loginFacebook:hover {
+    background-color: rgb(102, 120, 254);
+    ;
+}
 
-    @media (max-width: 390px) {
-        font-size: 40px;
+.loginFacebook:active {
+    background-color: rgb(30, 56, 252);
+    ;
+}
+
+.loginInstagram {
+    font-size: 20px;
+    background-color: rgb(226, 57, 181);
+    color: white;
+    padding: 15px 80px;
+    border-radius: 10px;
+
+    @media (max-width: 400px) {
+        font-size: 20px;
     }
+
+}
+
+.loginInstagram:hover {
+    background-color: rgb(230, 147, 208);
+
+}
+
+.loginInstagram:active {
+    background-color: rgb(226, 57, 181);
 
 }
