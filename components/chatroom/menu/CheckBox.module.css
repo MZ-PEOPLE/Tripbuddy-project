@@ -3,3 +3,18 @@
 
 
 }
+
+.clickCheck {
+    animation: checkAnimation 0.1s ease-in-out;
+}
+
+@keyframes checkAnimation {
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
