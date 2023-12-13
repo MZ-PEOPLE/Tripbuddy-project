@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Notifications.module.css";
-
+import { FaRegMessage } from "react-icons/fa6";
+import { FaHandsHelping } from "react-icons/fa";
+import { ImAirplane } from "react-icons/im";
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
 
@@ -13,11 +15,11 @@ const Notifications = () => {
           { id: 1, content: "김다미님이 메세지를 보냈습니다", icon: "message" },
           {
             id: 2,
-            content: "박주영님이 동행 요청 메세지를 보냈습니다",
+            content: "박주영님이 동행요청 메세지를 보냈습니다",
             icon: "request",
           },
           { id: 3, content: "백서영님이 메세지를 보냈습니다", icon: "message" },
-          { id: 4, content: "여행 동행 후기를 작성해주세요!", iWcon: "review" },
+          { id: 4, content: "여행 동행 후기를 작성해주세요!", icon: "review" },
         ];
 
         // 1초 후에 더미 데이터를 상태로 설정 (실제로는 API 요청 후에 호출해야 함)
@@ -31,13 +33,25 @@ const Notifications = () => {
 
     fetchNotifications();
   }, []);
-
+  const Icon = (icon) => {
+    switch (icon) {
+      case "message":
+        return <FaRegMessage className={styles.messageIcon} />;
+      case "request":
+        return <FaHandsHelping className={styles.requestIcon} />;
+      case "review":
+        return <ImAirplane className={styles.reviewIcon} />;
+      default:
+        return null;
+    }
+  };
   return (
     <div className={styles.notificationsContainer}>
       <div className={styles.notificationList}>
         {notifications.map((notification) => (
           <React.Fragment key={notification.id}>
             <div className={styles.notificationContainer}>
+              <div className={styles.iconStyle}>{Icon(notification.icon)}</div>
               <div className={styles.notification}>{notification.content}</div>
               <div className={styles.smallText}>10시간 전</div>
             </div>
