@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Topbar from "../topbar/TopBar";
-import BackBtn from "../topbar/BackButton";
 import styles from "./Notifications.module.css";
 
 const Notifications = () => {
@@ -36,8 +34,6 @@ const Notifications = () => {
 
   return (
     <div className={styles.notificationsContainer}>
-      <Topbar leftContent={<BackBtn />} middleContent={"알림"} />
-
       <div className={styles.notificationList}>
         {notifications.map((notification) => (
           <React.Fragment key={notification.id}>
@@ -45,8 +41,7 @@ const Notifications = () => {
               <div className={styles.notification}>{notification.content}</div>
               <div className={styles.smallText}>10시간 전</div>
             </div>
-            <hr className={styles.divider} />{" "}
-            {/* 각 알림 아이템 아래에 구분선 추가 */}
+            <hr className={styles.divider} /> {/* 각 알림 아이템 아래에 구분선 추가 */}
           </React.Fragment>
         ))}
       </div>
