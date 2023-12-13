@@ -28,13 +28,13 @@
 }
 
 .contextFrame {
-    padding: 10px;
+    padding: 5px;
 }
 
 .unreadCount {
     font-size: 10px;
-    padding-left: 10px;
     padding-top: 15px;
+    padding-right: 5px;
     font-weight: bold;
 }
 
