@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@react-google-maps/api": "^2.19.2",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^1.6.2",
+    "framer-motion": "^10.16.16",
     "jsonwebtoken": "^9.0.2",
     "moment-timezone": "^0.5.43",
     "mongodb": "^6.3.0",
