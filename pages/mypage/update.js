@@ -16,7 +16,7 @@ export default function MypageUpdate({ user }) {
     <>
       <Topbar
         leftContent={<BackBtn />}
-        middleContent={<>마이페이지 수정</>}
+        middleContent={"마이페이지 수정"}
         rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <ProfileUpdate />
