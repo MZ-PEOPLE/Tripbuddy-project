@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./UserPostContents.module.css";
+import { TiLocation } from "react-icons/ti";
 
 function UserPostContents() {
   const [datas, setDatas] = useState([
@@ -30,14 +31,9 @@ function UserPostContents() {
                 alt={data.alt}
                 className={styles.postContentPic}
               />
-              <div className={styles.hiddenText}>{data.date}</div>
               <div className={styles.IconBoxContainer}>
                 <div className={styles.IconBox}>
-                  <img
-                    src={data.icon_src}
-                    alt="아이콘"
-                    className={styles.Icon}
-                  />
+                  <TiLocation className={styles.Icon} />
                   <p className={styles.IconText}>{data.title}</p>
                 </div>
               </div>
