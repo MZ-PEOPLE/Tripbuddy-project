@@ -54,7 +54,7 @@ export default function WriteReview() {
                 />
               </div>
               <div className={styles.nameStarBox}>
-                <div>{userData.user_name}님</div>
+                <div className={styles.name}>{userData.user_name}님</div>
                 <StarRating
                   rating={ratings[index]}
                   onRatingChange={(rating) => handleRatingChange(index, rating)}

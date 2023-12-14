@@ -24,7 +24,13 @@
 
 .nameStarBox {
   margin-top: 27px;
-  margin-left: 10px;
+  width: 40%;
+}
+
+.name {
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .writeReviewBox {
