@@ -73,21 +73,41 @@ export default function Write({ user }) {
     setHeadCounts(selectedHead);
   };
 
-  //글 작성 후 서버로 전송 함수
-  const handleSubmit = () => {
-    const postData = {
-      title: title,
-      content: content,
-      image: selectedFiles,
-      dateSelectData: { startDate: startDate, endDate: endDate },
-      genderAgeSelectData: { gender: gender, ageRange: ageRange },
-      headSelectData: { headCounts: headCounts },
-      travelMapData: travelMapData,
-    };
+  //글 작성 후 DB 전송 함수
+  const handleSubmit = async () => {
+    try {
+      // 클라이언트에서 서버로 보낼 데이터 객체 생성
+      const formData = {
+        title: title,
+        content: content,
+        //image: selectedFiles,
+        dateSelectData: { startDate: startDate, endDate: endDate },
+        genderAgeSelectData: { gender: gender, ageRange: ageRange },
+        headSelectData: { headCounts: headCounts },
+        //travelMapData: travelMapData,
+      };
+      console.log(formData);
 
-    console.log("등록된 정보:", postData);
-    //~~최종 글서버전송
-    router.push("/"); //전송 후 메인페이지로 이동
+      // 서버에 데이터 전송 요청 (여기서는 POST 요청을 보내는 것으로 가정)
+      const response = await fetch("/api/writeInput", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // 성공적인 응답 확인 후 리다이렉션 또는 처리
+      if (response.ok) {
+        router.push("/"); // 성공 시 메인페이지로 이동
+      } else {
+        console.error("서버 응답 오류:", response.status);
+        alert("글 작성 오류 발생");
+      }
+    } catch (error) {
+      console.error("글 작성 오류", error);
+      alert("글 작성 오류 발생");
+    }
   };
 
   return (
