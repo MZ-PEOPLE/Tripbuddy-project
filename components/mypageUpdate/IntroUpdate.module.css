@@ -1,9 +1,9 @@
 .introUpdate {
     background-color: rgb(227, 225, 225);
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 2px 2px 1px rgba(95, 94, 94, 0.765);
-
-    width: 100%;
+    padding: 0 10px;
+    width: 90%;
 
 
 }
@@ -29,6 +29,7 @@
 
 .introBtn {
     font-size: 50px;
+    color: grey;
 
     @media (max-width: 400px) {
         font-size: 30px;

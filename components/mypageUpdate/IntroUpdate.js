@@ -1,6 +1,7 @@
 import styles from "./IntroUpdate.module.css";
 import React, { useState, useRef } from 'react';
-import { RxPencil1 } from "react-icons/rx";
+import { PiPencilSimpleFill } from "react-icons/pi";
+
 
 export default function IntroUpdate() {
 
@@ -24,7 +25,7 @@ export default function IntroUpdate() {
                     onChange={handleIntroChange}
                     ref={introInputRef}
                 />
-                <button className={styles.introBtn} onClick={introUpdateClick}> <RxPencil1 /></button>
+                <button className={styles.introBtn} onClick={introUpdateClick}> <PiPencilSimpleFill /></button>
             </div>
 
         </div>
