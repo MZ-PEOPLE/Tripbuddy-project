@@ -16,7 +16,7 @@ export default function MyPageContainer({ user }) {
     <>
       <Topbar
         leftContent={<BackBtn />}
-        middleContent={user.name}
+        middleContent={user.name + "님의 마이페이지"}
         rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <MyPageProfileDetail user={user} />
