@@ -12,13 +12,14 @@
 
 .idUpdate {
     background-color: rgb(227, 225, 225);
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 2px 2px 1px rgba(95, 94, 94, 0.765);
-    margin: 0px 10px 0px 0px;
+
+    padding: 0 10px;
     width: 80%;
 
     @media (max-width: 400px) {
-        width: 80%;
+        width: 70%;
 
 
     }
@@ -29,12 +30,9 @@
 
 .idButton {
     font-size: 50px;
+    color: grey;
 
     @media (max-width: 400px) {
         font-size: 30px;
     }
-}
-
-.profileId {
-    margin-left: 10px;
 }

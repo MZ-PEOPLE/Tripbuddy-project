@@ -1,7 +1,6 @@
 import styles from "./IdUpdate.module.css";
 import React, { useState, useRef } from 'react';
-import { RxPencil1 } from "react-icons/rx";
-
+import { PiPencilSimpleFill } from "react-icons/pi";
 export default function IdUpdate() {
 
     const idInputRef = useRef('');
@@ -24,7 +23,7 @@ export default function IdUpdate() {
                     onChange={handleIdChange}
                     ref={idInputRef}
                 />
-                <button className={styles.idButton} onClick={idUpdateClick}><RxPencil1 /></button>
+                <button className={styles.idButton} onClick={idUpdateClick}><PiPencilSimpleFill /></button>
             </div>
         </div>
     )
