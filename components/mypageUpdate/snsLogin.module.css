@@ -1,6 +1,5 @@
 .loginFrame {
     position: fixed;
-
     width: 100%;
     display: flex;
     align-items: center;
@@ -33,12 +32,12 @@
 
 .loginFacebook:hover {
     background-color: rgb(102, 120, 254);
-    ;
+
 }
 
 .loginFacebook:active {
     background-color: rgb(30, 56, 252);
-    ;
+
 }
 
 .loginInstagram {
