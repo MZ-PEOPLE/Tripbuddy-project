@@ -1,5 +1,5 @@
 .Container {
-  margin: 1.5vh;
+  margin: 1.7vh 1.7vh 25px 1.7vh;
   border-radius: 10px;
   -webkit-box-shadow: 2px 4px 13px -3px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 2px 9px -3px rgba(0, 0, 0, 0.46);
