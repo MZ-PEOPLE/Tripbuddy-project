@@ -1,16 +1,19 @@
-.frame {
-    display: flex;
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
 
+.frame {
+  display: flex;
+  width: 100%;
 }
 
 .userId {
-
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    margin: 50px 0 0 50px;
-
-
-
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 25px;
 }
