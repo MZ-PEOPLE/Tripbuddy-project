@@ -3,13 +3,15 @@
   width: 100%;
   position: fixed;
   display: block;
-  border-bottom: 1px solid rgb(196, 196, 196);
+  box-shadow: rgba(17, 17, 26, 0.068) 0px 2px 4px;
+
   background-color: white;
   z-index: 100;
 }
 
 .Header_border {
-  height: 43px;
+  height: 45px;
+  margin-bottom: 2px;
 }
 
 .Header_border_searchBar {
@@ -18,7 +20,7 @@
 
 .Header_searchTrue {
   border-radius: 0px 0px 10px 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.46);
 }
 
 .Header_bar {
