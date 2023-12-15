@@ -1,64 +1,44 @@
 .loginFrame {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .snsLogin {
-    margin: 30px 0 0 10px;
-    font-size: 40px;
-
-    @media (max-width: 400px) {
-        font-size: 20px;
-    }
-
+  margin: 30px 0 0 10px;
+  font-size: 25px;
 }
 
 .loginFacebook {
-    margin: 10px 0;
-    font-size: 20px;
-    background-color: rgb(30, 56, 252);
-    padding: 15px 80px;
-    color: white;
-    border-radius: 10px;
-
-    @media (max-width: 400px) {
-        font-size: 20px;
-    }
-
+  margin: 10px 0;
+  font-size: 20px;
+  background-color: rgb(30, 56, 252);
+  padding: 15px 80px;
+  color: white;
+  border-radius: 10px;
 }
 
 .loginFacebook:hover {
-    background-color: rgb(102, 120, 254);
-
+  background-color: rgb(102, 120, 254);
 }
 
 .loginFacebook:active {
-    background-color: rgb(30, 56, 252);
-
+  background-color: rgb(30, 56, 252);
 }
 
 .loginInstagram {
-    font-size: 20px;
-    background-color: rgb(226, 57, 181);
-    color: white;
-    padding: 15px 80px;
-    border-radius: 10px;
-
-    @media (max-width: 400px) {
-        font-size: 20px;
-    }
-
+  font-size: 20px;
+  background-color: rgb(226, 57, 181);
+  color: white;
+  padding: 15px 80px;
+  border-radius: 10px;
 }
 
 .loginInstagram:hover {
-    background-color: rgb(230, 147, 208);
-
+  background-color: rgb(230, 147, 208);
 }
 
 .loginInstagram:active {
-    background-color: rgb(226, 57, 181);
-
+  background-color: rgb(226, 57, 181);
 }
