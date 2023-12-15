@@ -1,46 +1,32 @@
+.mainFrame {
+  width: 100px;
+}
+
 .frame {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
+  width: 100px;
+  height: 100px;
 }
 
 .profileImg {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid rgb(0, 187, 0);
-    display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 
-
-    @media (max-width: 400px) {
-        width: 100px;
-        height: 100px;
-    }
-
-
+  display: flex;
 }
 
 .imgUpdateBtn {
-    color: #ffffff;
-    background-color: grey;
-    font-size: 50px;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-
-    @media (max-width: 400px) {
-        font-size: 40px;
-    }
-
-
+  color: #ffffff;
+  background-color: grey;
+  font-size: 30px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 
-
 .deleteBtn {
-    font-size: 40px;
-
-    @media (max-width: 400px) {
-        font-size: 30px;
-    }
-
+  font-size: 20px;
 }

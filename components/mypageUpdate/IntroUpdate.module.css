@@ -1,38 +1,44 @@
 .introUpdate {
-    background-color: rgb(227, 225, 225);
-    border-radius: 10px;
-    box-shadow: 2px 2px 1px rgba(95, 94, 94, 0.765);
-    padding: 0 10px;
-    width: 90%;
-
-
+  background-color: rgb(241, 240, 240);
+  padding-left: 20px;
+  padding-right: 30px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 1px rgba(148, 148, 148, 0.765);
+  width: 100%;
+  height: 100%;
 }
 
-
-
 .introFrame {
-    margin: 40px 0px 0px 0px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profileIntro {
-    margin-left: 20px;
-    font-size: 40px;
+  width: 100%;
+  font-size: 20px;
+}
 
-    @media (max-width: 400px) {
-        font-size: 20px;
-    }
-
+.profileIntroTitle {
+  margin-left: 15px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .introBtn {
-    font-size: 50px;
-    color: grey;
+  right: 0;
+  position: absolute;
+  font-size: 30px;
+  top: 5px;
+  color: rgb(105, 104, 104);
+}
 
-    @media (max-width: 400px) {
-        font-size: 30px;
-    }
-
+.profileIntroBox {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  margin-top: 8px;
 }
