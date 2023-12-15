@@ -33,12 +33,14 @@
 
 .left {
   width: 100px;
+  margin-left: 5px;
 }
 
 .right {
   width: 100px;
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .middle {
