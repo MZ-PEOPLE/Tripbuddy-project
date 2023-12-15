@@ -1,5 +1,6 @@
 import styles from "./UserProfileDetail.module.css";
 import { CgProfile } from "react-icons/cg";
+import Link from "next/link";
 
 function UserProfileDetail({ user }) {
   console.log(user, "UserProfileDetail");
@@ -10,11 +11,7 @@ function UserProfileDetail({ user }) {
         <div className={styles.userProfileBox}>
           <div className={styles.userProfile}>
             <div className={styles.profilePicContainer}>
-              <img
-                className={styles.profilePic}
-                src={user.profileImage}
-                alt={user.name}
-              />
+              <img className={styles.profilePic} src={user.profileImage} alt={user.name} />
             </div>
             <div className={styles.profileDetail}>
               <div className={styles.Name}>{user.name}</div>
@@ -30,10 +27,10 @@ function UserProfileDetail({ user }) {
       </div>
 
       <div className={styles.profileModify}>
-        <button type="button" className={styles.ModifyButton}>
+        <Link href="/mypage/update" className={styles.ModifyButton}>
           <CgProfile alt="아이콘 자리" className={styles.ModifyIcon} />
           <div className={styles.ModifyText}>프로필 수정</div>
-        </button>
+        </Link>
       </div>
     </div>
   );
