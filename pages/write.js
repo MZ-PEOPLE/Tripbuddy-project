@@ -8,17 +8,21 @@ import BackBtn from "@/components/topbar/BackButton";
 import Logo from "@/components/topbar/Logo";
 import LoginCheck from "@/components/topbar/LoginCheck";
 import TravelMap from "@/components/user_write/TravelMap";
+import HeadcountSelect from "@/components/user_write/HeadcountSelect";
+
 import styles from "../components/user_write/write.module.css";
-import { FaCamera, FaRegTrashAlt, FaMapMarker } from "react-icons/fa";
+import { FaRegTrashAlt, FaMapMarker } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
+import { HiUserAdd } from "react-icons/hi";
 
-export default function Write() {
+export default function Write({ user }) {
   const [title, setTitle] = useState(""); //글제목
   const [content, setContent] = useState(""); //글내용
   const [selectedFiles, setSelectedFiles] = useState([]); //선택된 이미지파일 목록
   const [startDate, setStartDate] = useState(null); //여행 시작 날짜
   const [endDate, setEndDate] = useState(null); //여행 종료 날짜
+  const [headCounts, setHeadCounts] = useState(""); //인원수
   const [gender, setGender] = useState(""); //성별
   const [ageRange, setAgeRange] = useState(""); //나이대
   const [travelMapData, setTravelMapData] = useState(null); //여행지도 데이터
@@ -61,26 +65,51 @@ export default function Write() {
     setGender(selectedGender);
     setAgeRange(selectedAgeRange);
   };
+  const handleHeadData = ({ selectedHead }) => {
+    setHeadCounts(selectedHead);
+  };
   //글 작성 후 서버로 전송 함수
-  const handleSubmit = () => {
-    const postData = {
-      title: title,
-      content: content,
-      image: selectedFiles,
-      dateSelectData: { startDate: startDate, endDate: endDate },
-      genderAgeSelectData: { gender: gender, ageRange: ageRange },
-      travelMapData: travelMapData,
-    };
-    console.log("등록된 정보:", postData);
-    //~~최종 글서버전송
-    router.push("/"); //전송 후 메인페이지로 이동
+  const handleSubmit = async () => {
+    try {
+      // 클라이언트에서 서버로 보낼 데이터 객체 생성
+      const formData = {
+        title: title,
+        content: content,
+        //image: selectedFiles,
+        dateSelectData: { startDate: startDate, endDate: endDate },
+        genderAgeSelectData: { gender: gender, ageRange: ageRange },
+        headSelectData: { headCounts: headCounts },
+        //travelMapData: travelMapData,
+      };
+      console.log(formData);
+
+      // 서버에 데이터 전송 요청 (여기서는 POST 요청을 보내는 것으로 가정)
+      const response = await fetch("/api/writeInput", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // 성공적인 응답 확인 후 리다이렉션 또는 처리
+      if (response.ok) {
+        router.push("/"); // 성공 시 메인페이지로 이동
+      } else {
+        console.error("서버 응답 오류:", response.status);
+        alert("글 작성 오류 발생");
+      }
+    } catch (error) {
+      console.error("글 작성 오류", error);
+      alert("글 작성 오류 발생");
+    }
   };
   return (
     <>
       <Navbar
         leftContent={<BackBtn />}
         middleContent={<Logo />}
-        rightContent={<LoginCheck />}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <div className={styles.writeContainer}>
         <div className={styles.writeTitle}>게시글 작성</div>
@@ -102,18 +131,15 @@ export default function Write() {
           ></textarea>
         </div>
         <div className={styles.addPicture}>
-          <label
-            htmlFor="input-file"
-            className={styles.addButton}
-            onChange={handleImageUpload}
-          >
+          <div className={styles.addButton}>
+
             <input
+              onChange={handleImageUpload}
               type="file"
-              id="input-file"
               multiple
               className={styles.addButton}
             />
-          </label>
+          </div>
           {selectedFiles.map((image, id) => (
             <div className={styles.imageContainer} key={id}>
               <img src={image} alt={`${image}-${id}`} />
@@ -126,6 +152,10 @@ export default function Write() {
         <h2 className={styles.writeTitle}><MdDateRange className={styles.dateIcon} />언제 여행가시나요?</h2>
         <div className={styles.selectBox}>
           <DateSelect handleData={handleDataSelection} dataType="date" />
+        </div>
+        <h2 className={styles.writeTitle}><HiUserAdd className={styles.infoIcon} />몇 명과 동행하고 싶나요?</h2>
+        <div className={styles.selectBox}>
+          <HeadcountSelect handleData={handleHeadData} dataType="headCounts" />
         </div>
         <h2 className={styles.writeTitle}><IoIosPerson className={styles.infoIcon} />성별과 나이는?</h2>
         <div className={styles.selectBox}>
@@ -140,7 +170,7 @@ export default function Write() {
           </button>
         </div>
       </div >
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }
