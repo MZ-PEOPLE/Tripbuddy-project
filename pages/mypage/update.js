@@ -19,8 +19,8 @@ export default function MypageUpdate({ user }) {
         middleContent={"마이페이지 수정"}
         rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
-      <ProfileUpdate />
+      <ProfileUpdate user={user} />
       <FooterBar />
     </>
-  )
+  );
 }
