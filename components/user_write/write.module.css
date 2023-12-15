@@ -1,11 +1,10 @@
-
 .writeContainer {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .writeTitle {
-  font-size: 24px;
+  font-size: 15px;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -21,10 +20,26 @@
 
 }
 
+.mapIcon {
+  font-size: 15px;
+  color: rgb(102, 174, 212);
+}
+
+.dateIcon {
+  font-size: 15px;
+  color: rgb(255, 170, 0);
+
+}
+
+.infoIcon {
+  font-size: 15px;
+  color: #00599e;
+}
+
 .buttonBox {
   display: flex;
   justify-content: center;
-  margin-top: 20px; 
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -32,6 +47,7 @@
   display: flex;
   justify-content: center;
 }
+
 .selectBox button {
   white-space: nowrap;
   overflow: hidden;
@@ -39,20 +55,19 @@
 }
 
 .submitButton {
-  padding: 12px 24px; 
-  background-color: #007bff;
+  background-color: #9cc1e9;
   border-radius: 4px;
   cursor: pointer;
   width: 200px;
   height: 50px;
   text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  color: white;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
 .submitButton:hover {
-  background-color: #e0e0e0;
+  background-color: #5b93ce;
+  color: white;
 }
 
 .imageContainer {
@@ -65,7 +80,7 @@
 }
 
 .textareaField {
-  height: 200px; 
+  height: 200px;
   resize: vertical;
 }
 
@@ -80,18 +95,22 @@
   .textareaField,
   .fileInput {
     width: calc(100% - 20px);
-    padding: 8px;
+    padding: 10p;
     margin-bottom: 10px;
     border: 1px solid #ccc;
+    background-color: #f8f8f8;
     border-radius: 5px;
-    font-size: 16px; 
+    font-size: 16px;
+
+
+
   }
 
   .buttonBox {
     display: flex;
     justify-content: center;
-    margin-top: 15px; 
-    margin-bottom: 15px; 
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 
   .selectBox {
