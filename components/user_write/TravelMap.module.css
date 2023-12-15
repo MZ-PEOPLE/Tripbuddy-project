@@ -1,61 +1,62 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
-  
+
 .inputContainer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
 }
-  
+
 .inputField {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 10px;
-    width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px;
 }
-  
+
 .searchButton {
-    width: 80px;
-    height: 40px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  width: 80px;
+  height: 40px;
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #9cc1e9;
+  margin-left: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-  
+
 .searchButton:hover {
-    background-color: #0056b3;
+  background-color: #5b93ce;
+  color: white;
 }
 
 /* 모바일 화면 */
 @media screen and (max-width: 767px) {
-    .container {
-      padding: 10px;
-    }
-  
-    .inputContainer {
-      align-items: flex-start;
-      margin-bottom: 10px;
-    }
-  
-    .inputField {
-      width: 200px;
-      margin-right: 0;
-      margin-bottom: 10px;
-    }
-  
-    .searchButton {
-      width: calc(100% - 20px);
-    }
+  .container {
+    padding: 10px;
+  }
+
+  .inputContainer {
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .inputField {
+    width: 200px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .searchButton {
+    width: calc(100% - 20px);
+  }
 }
