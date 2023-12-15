@@ -1,14 +1,19 @@
 .infoBox {
   display: flex;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
-  border-radius: 0px 0px 10px 10px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .items {
   margin: 0px 15px;
+}
+
+.icon {
+  margin: 0px 6px;
+  color: rgb(107, 106, 106);
 }
 
 @media screen and (max-width: 320px) {

@@ -20,12 +20,17 @@
 
 .locationsBox {
   display: flex;
-  padding: 0 20px;
+  padding: 0 10px;
   height: 30px;
   align-items: center;
   border-radius: 15px;
   margin: 0 10px;
   background-color: white;
+}
+
+.marker_img {
+  font-size: 23px;
+  color: rgb(107, 106, 106);
 }
 
 .location {
@@ -49,9 +54,8 @@
 
 .likeBtn {
   display: flex;
-  background-color: aliceblue;
-  height: 5vh;
-  width: 5vh;
+  height: 3.5vh;
+  width: 4vh;
   margin: 0px 10px;
   border-radius: 100%;
   justify-content: center;

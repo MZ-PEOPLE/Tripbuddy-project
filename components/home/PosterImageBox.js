@@ -1,6 +1,6 @@
 import styles from "./PosterImageBox.module.css";
 import HeartIconToggle from "../postDetail/HeartIconToggle";
-import { LuMapPin } from "react-icons/lu";
+import { TiLocation } from "react-icons/ti";
 
 const PosterImage = ({ location, isLike, imgSrc }) => {
   return (
@@ -8,7 +8,7 @@ const PosterImage = ({ location, isLike, imgSrc }) => {
       <img src={imgSrc} className={styles.userImg}></img>
       <div className={styles.infoBox}>
         <div className={styles.locationsBox}>
-          <LuMapPin className={styles.marker_img} />
+          <TiLocation className={styles.marker_img} />
           <div className={styles.location}>{location}</div>
         </div>
         <div className={styles.likeBtn}>
