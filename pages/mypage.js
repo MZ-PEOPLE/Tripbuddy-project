@@ -4,6 +4,7 @@ import BackBtn from "@/components/topbar/BackButton";
 import LoginCheck from "@/components/topbar/LoginCheck";
 import Topbar from "@/components/topbar/TopBar";
 import { useRouter } from "next/router";
+import FooterBar from "@/components/footerbar/FooterBar";
 
 export default function MyPageContainer({ user }) {
   const router = useRouter();
@@ -21,6 +22,7 @@ export default function MyPageContainer({ user }) {
       />
       <MyPageProfileDetail user={user} />
       <MyPageUserTapBar userid={user.id} />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }
