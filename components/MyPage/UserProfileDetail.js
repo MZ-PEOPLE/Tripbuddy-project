@@ -10,7 +10,11 @@ function UserProfileDetail({ user }) {
         <div className={styles.userProfileBox}>
           <div className={styles.userProfile}>
             <div className={styles.profilePicContainer}>
-              <img className={styles.profilePic} src={user.profileImage} alt={user.name} />
+              <img
+                className={styles.profilePic}
+                src={user.profileImage}
+                alt={user.name}
+              />
             </div>
             <div className={styles.profileDetail}>
               <div className={styles.Name}>{user.name}</div>
