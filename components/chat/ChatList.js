@@ -16,9 +16,9 @@ export default function ChatListComponent() {
     {
       userid: 2,
       profileImg: '/img/profile_test_dulgi.png',
-      profileId: '구국',
+      profileId: '구구 비둘기',
       chatTime: '13:40',
-      chatContext: 'ㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇㅎㅇ',
+      chatContext: '국구구국구국국구 국국구,,,국국구,,,,국국구 국국구,,,국국구,,,,,',
       unreadCount: 999,
       roomid: 123,
     },
@@ -30,13 +30,16 @@ export default function ChatListComponent() {
       chatContext: '여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고여행고',
       unreadCount: 5,
       roomid: 123,
-    } //unreadCount0이고 읽으면 빨간 알람 X
+    },
+
+
+    //unreadCount0이고 읽으면 빨간 알람 X
   ];
 
   return (
     <>
       {chatDataList.map((chatData, index) => (
-        <Link href={`/chat/${chatData.roomid}`} className={styles.link} key={index}>
+        <Link href={`/chat/chatroom`} className={styles.link} key={index}>
           <div className={styles.userFrame}>
             <div className={styles.leftFrame}>
               <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />

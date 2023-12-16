@@ -13,6 +13,7 @@
     height: 40px;
     border-radius: 15px;
     margin-right: 5px;
+    padding-right: 3px;
 
 
 }
@@ -33,9 +34,14 @@
 .chatContext {
     font-size: 12px;
     text-overflow: ellipsis;
-
-
-
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* 두 줄 이상이면 가리기 */
+    -webkit-box-orient: vertical;
+    margin-right: 3px;
+    margin-top: 5px;
+    width: 90%;
 }
 
 .userFrame {
@@ -60,17 +66,18 @@
 
 .rightFrame {
     margin-top: 10px;
+    position: fixed;
+    right: 0;
+
 }
 
 .profileId {
     font-size: 12px;
-
-    font-size: 12px;
+    font-weight: 600;
 
 }
 
 .unreadCount {
-    font-size: 12px;
     font-size: 12px;
     background-color: #ff331c;
     color: white;
@@ -79,19 +86,14 @@
     text-align: center;
     padding: 1px 3px;
 
-
-
 }
 
 .chatTime {
     font-size: 12px;
-    font-size: 12px;
     max-width: fit-content;
     text-align: center;
     color: grey;
-
-
-    color: grey;
+    padding-bottom: 3px;
 
 
 }
