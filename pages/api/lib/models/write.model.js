@@ -1,28 +1,46 @@
 import mongoose from "mongoose";
 
-const writeSchema = new mongoose.Schema(
-  {
-    title: String,
-    content: String,
-    image: [String],
+let WriteInput;
+
+try {
+  // 이미 정의된 모델이 있는지 확인
+  WriteInput = mongoose.model("WriteInput");
+} catch (e) {
+  // 모델이 없으면 새로 정의
+  const writeSchema = new mongoose.Schema({
+    title: {
+      type: String,
+    },
+    content: {
+      type: String,
+    },
     dateSelectData: {
-      startDate: Date,
-      endDate: Date,
+      startDate: {
+        type: Date,
+      },
+      endDate: {
+        type: Date,
+      },
     },
     genderAgeSelectData: {
-      gender: String,
-      ageRange: String,
+      gender: {
+        type: String,
+      },
+      ageRange: {
+        type: String,
+      },
     },
     headSelectData: {
-      headCounts: String,
+      headCounts: {
+        type: String,
+      },
     },
-    travelMapData: {
-      /* 여행지도 구조 정의 */
+    imagePaths: {
+      type: [String],
     },
-  },
-  {
-    timestamps: true,
-  }
-);
+  });
 
-export default mongoose.models.Write || mongoose.model("Write", writeSchema);
+  WriteInput = mongoose.model("WriteInput", writeSchema);
+}
+
+export default WriteInput;
