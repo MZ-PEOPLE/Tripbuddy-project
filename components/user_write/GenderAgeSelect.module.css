@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.infoTitle {
+  /* 성별, 나이대 타이틀*/
+  text-align: center;
+  margin-bottom: 8px;
+}
+
 .genderContainer,
 .ageContainer {
   position: relative;
@@ -16,7 +22,7 @@
 
 .button {
   padding: 8px 16px;
-  background-color: #f2f2f2;
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 4px;
   cursor: pointer;
@@ -64,23 +70,27 @@
 /* 모바일 화면 */
 @media screen and (max-width: 767px) {
   .container {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
     align-items: center;
   }
 
   .genderContainer,
   .ageContainer {
-    margin: 10px 0;
+    margin: 10px 10px;
   }
 
   .button {
-    width: 100%;
+    min-width: fit-content;
+    height: 80%;
+    text-align: center;
   }
 
   .genderDropdown,
   .ageDropdown {
     top: initial;
     left: initial;
-    width: 100%;
+    min-width: fit-content;
+
   }
 }

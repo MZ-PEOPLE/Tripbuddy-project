@@ -42,7 +42,7 @@ function HeadcountSelect({ handleData }) {
 
   return (
     <div className={styles.container}>
-      <h3>인원 선택 :</h3>
+      <h3>인원</h3>
       <div className={styles.headContainer}>
         <button onClick={toggleHeadDropdown} className={styles.button}>
           {selectedHead || "인원 선택"}
