@@ -4,7 +4,8 @@
 }
 
 .writeTitle {
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 600;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -20,9 +21,20 @@
 
 }
 
+.textareaField::placeholder {
+  /* 줄바꿈 처리를 위한 CSS 속성 */
+  white-space: pre-line;
+}
+
+.textareaField {
+  /* 줄간격 늘림 */
+  line-height: 1.2;
+}
+
 .mapIcon {
   font-size: 15px;
   color: rgb(102, 174, 212);
+
 }
 
 .dateIcon {
