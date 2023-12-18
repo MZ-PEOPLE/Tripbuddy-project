@@ -41,10 +41,12 @@ export default function Write({ user }) {
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
+
   //입력된 내용 처리 함수
   const handleContentChange = (e) => {
     setContent(e.target.value);
   };
+
   //이미지 업로드 처리 함수
   const handleImageUpload = async (e) => {
     const files = e.target.files;
@@ -78,10 +80,12 @@ export default function Write({ user }) {
       console.error("이미지 업로드 중 에러:", error);
     }
   };
+
   //선택된 이미지 삭제 함수
   const handleImageDelete = (id) => {
     setSelectedFiles(selectedFiles.filter((_, index) => index !== id));
   };
+
   //날짜 선택 컴포넌트(DateSelect)에서 선택된 날짜 처리 함수
   const handleDataSelection = (date_data) => {
     if (date_data && date_data.asd) {
@@ -90,24 +94,36 @@ export default function Write({ user }) {
       setEndDate(date_data.asd.endDate);
     }
   };
+
   //성별, 나이대 선택 컴포넌트에서 선택된 데이터 처리 함수
   const handleGenderAgeData = ({ selectedGender, selectedAgeRange }) => {
     setGender(selectedGender);
     setAgeRange(selectedAgeRange);
   };
+
   const handleHeadData = ({ selectedHead }) => {
     setHeadCounts(selectedHead);
   };
-  //글 작성 후 서버로 전송 함수
+
+  const handleLocationSelect = (location) => {
+    setSelectedLocation(location);
+  };
+
   const handleSubmit = async () => {
     try {
+      // 위치 정보 유무 확인 -> 없으면 처리 중단
+      if (!selectedLocation) {
+        console.error("위치 정보 없음");
+        return;
+      }
+
       const textData = {
         title,
         content,
         dateSelectData: { startDate, endDate },
         genderAgeSelectData: { gender, ageRange },
         headSelectData: { headCounts },
-        imagePaths: selectedFiles,
+        imagePaths: selectedFiles, // 이미지 경로 추가
         location: selectedLocation,
       };
 
@@ -133,10 +149,12 @@ export default function Write({ user }) {
       alert("글 작성 오류 발생");
     }
   };
+
   // 버튼 클릭 시 handleSubmit 함수 호출
   const handleButtonClick = () => {
     handleSubmit();
   };
+
   return (
     <>
       <Navbar
@@ -191,7 +209,7 @@ export default function Write({ user }) {
           <FaMapMarker className={styles.mapIcon} />
           어디로 여행가시나요?
         </h1>
-        <TravelMap />
+        <TravelMap onLocationSelect={handleLocationSelect} />
         <h2 className={styles.writeTitle}>
           <MdDateRange className={styles.dateIcon} />
           언제 여행가시나요?
