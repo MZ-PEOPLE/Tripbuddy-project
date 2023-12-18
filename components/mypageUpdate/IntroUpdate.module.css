@@ -27,14 +27,6 @@
   font-weight: 700;
 }
 
-.introBtn {
-  right: 0;
-  position: absolute;
-  font-size: 30px;
-  top: 5px;
-  color: rgb(105, 104, 104);
-}
-
 .profileIntroBox {
   position: relative;
   display: flex;
