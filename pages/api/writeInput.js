@@ -1,6 +1,6 @@
 import WritePost from "./lib/models/write.model";
 
-export default async function handlePostCreation(req, res) {
+export default async function handleWriteInput(req, res) {
   try {
     console.log("요청데이터:", req.body);
 
@@ -10,9 +10,11 @@ export default async function handlePostCreation(req, res) {
       dateSelectData,
       genderAgeSelectData,
       headSelectData,
-      imagePaths,
       location,
     } = req.body;
+
+    // 이미지 경로는 uploadImages.js에서 받아온 것으로 가정
+    const { imagePaths } = req.body;
 
     // 필수 필드 유효성 검사
     if (
@@ -26,33 +28,33 @@ export default async function handlePostCreation(req, res) {
       !genderAgeSelectData.ageRange ||
       !headSelectData ||
       !headSelectData.headCounts ||
-      !imagePaths ||
       !location.name ||
       !location.latitude ||
-      !location.longitude
+      !location.longitude ||
+      !imagePaths // 이미지 경로 필수 필드 여부 확인
     ) {
       console.log("필수 필드 누락");
       return res.status(400).json({
         message: "필수 필드가 누락되었습니다.",
       });
     }
-    const newWriteInput = new WritePost(location);
-    await newWriteInput.save();
 
-    const newWrite = new WritePost({
+    const writePost = new WritePost({
       title,
       content,
       dateSelectData,
       genderAgeSelectData,
       headSelectData,
-      imagePaths,
+      imagePaths, // 이미지 경로 추가
       location,
     });
 
-    console.log("저장할 데이터:", newWrite);
-    await newWrite.save();
+    console.log("MongoDB에 저장할 데이터:", writePost);
 
-    console.log("글 작성 완료");
+    await writePost.save(); // 이미지 경로들을 MongoDB에 저장
+
+    console.log("MongoDB에 저장 완료");
+
     return res.status(200).json({
       message: "글 작성이 완료되었습니다.",
       imagePaths,
