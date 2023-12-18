@@ -23,9 +23,9 @@ const StarRating = ({ rating, onRatingChange }) => {
         <FaStar
           key={index}
           size={24}
-          className={
+          className={`${styles.defaultStar} ${
             (hoveredRating || rating) >= index ? styles.yellowStar : ""
-          }
+          }`}
           onMouseOver={() => handleMouseOver(index)}
           onMouseLeave={handleMouseLeave}
           onClick={() => handleClick(index)}

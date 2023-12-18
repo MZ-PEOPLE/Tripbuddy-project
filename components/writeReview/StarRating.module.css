@@ -2,9 +2,13 @@
   display: inline-block;
 }
 
+.defaultStar {
+  color: #ccc;
+  cursor: pointer;
+}
+
 .yellowStar {
   color: #ffd700;
-  cursor: pointer;
 }
 
 .yellowStar:hover {
