@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DateSelect from "../components/user_write/DateSelect";
 import GenderAgeSelect from "../components/user_write/GenderAgeSelect";
