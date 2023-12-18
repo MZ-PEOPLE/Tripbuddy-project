@@ -1,18 +1,16 @@
 import styles from "./IntroUpdate.module.css";
 import React, { useState, useRef } from "react";
-import { PiPencilSimpleFill } from "react-icons/pi";
 
-export default function IntroUpdate({ userIntro }) {
+export default function IntroUpdate({ userIntro, onUpdate }) {
   const [newIntro, setNewIntro] = useState(userIntro);
   const introInputRef = useRef("");
 
   const handleIntroChange = (event) => {
-    setNewIntro(event.target.value);
+    const updatedIntro = event.target.value;
+    setNewIntro(updatedIntro);
+    onUpdate(updatedIntro);
   };
 
-  const introUpdateClick = () => {
-    console.log("소개글 수정", newIntro);
-  };
   return (
     <div className={styles.introFrame}>
       <div className={styles.profileIntro}>
@@ -25,10 +23,6 @@ export default function IntroUpdate({ userIntro }) {
             onChange={handleIntroChange}
             ref={introInputRef}
           />
-          <button onClick={introUpdateClick}>
-            {" "}
-            <PiPencilSimpleFill className={styles.introBtn} />
-          </button>
         </div>
       </div>
     </div>
