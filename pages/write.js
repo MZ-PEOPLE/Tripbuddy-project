@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import DateSelect from "../components/user_write/DateSelect";
 import GenderAgeSelect from "../components/user_write/GenderAgeSelect";
@@ -25,33 +25,67 @@ export default function Write({ user }) {
   const [headCounts, setHeadCounts] = useState(""); //인원수
   const [gender, setGender] = useState(""); //성별
   const [ageRange, setAgeRange] = useState(""); //나이대
-  const [travelMapData, setTravelMapData] = useState(null); //여행지도 데이터
+  const [selectedLocation, setSelectedLocation] = useState(null); //여행지도 데이터
+  const [name, setName] = useState("");
+  const [latitude, setLatitude] = useState(0);
+  const [longitude, setLongitude] = useState(0);
   const router = useRouter(); //라우터 인스턴스
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+    }
+  }, [user, router]);
+
   //입력된 제목 처리 함수
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
   };
+
   //입력된 내용 처리 함수
   const handleContentChange = (e) => {
     setContent(e.target.value);
   };
-  //이미지 업로드 함수
-  const handleImageUpload = (e) => {
+
+  //이미지 업로드 처리 함수
+  const handleImageUpload = async (e) => {
     const files = e.target.files;
-    let fileArray = [...selectedFiles];
-    for (let i = 0; i < files.length; i++) {
-      const currentFileUrl = URL.createObjectURL(files[i]);
-      fileArray.push(currentFileUrl);
+
+    try {
+      const formData = new FormData();
+
+      for (let i = 0; i < files.length; i++) {
+        formData.append("images", files[i]);
+      }
+
+      const response = await fetch("/api/uploadImages", {
+        method: "POST",
+        body: formData,
+      });
+
+      console.log("이미지 업로드 응답:", response);
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("서버응답:", data);
+        const uploadedImagePaths = data.imagePaths;
+        console.log("이미지 업로드 성공:", uploadedImagePaths);
+
+        // 이미지 경로를 useState를 통해 업데이트
+        setSelectedFiles(uploadedImagePaths);
+      } else {
+        console.error("이미지 업로드 실패");
+      }
+    } catch (error) {
+      console.error("이미지 업로드 중 에러:", error);
     }
-    if (fileArray.length > 10) {
-      fileArray = fileArray.slice(0, 10);
-    }
-    setSelectedFiles(fileArray);
   };
+
   //선택된 이미지 삭제 함수
   const handleImageDelete = (id) => {
     setSelectedFiles(selectedFiles.filter((_, index) => index !== id));
   };
+
   //날짜 선택 컴포넌트(DateSelect)에서 선택된 날짜 처리 함수
   const handleDataSelection = (date_data) => {
     if (date_data && date_data.asd) {
@@ -60,28 +94,67 @@ export default function Write({ user }) {
       setEndDate(date_data.asd.endDate);
     }
   };
+
   //성별, 나이대 선택 컴포넌트에서 선택된 데이터 처리 함수
   const handleGenderAgeData = ({ selectedGender, selectedAgeRange }) => {
     setGender(selectedGender);
     setAgeRange(selectedAgeRange);
   };
+
   const handleHeadData = ({ selectedHead }) => {
     setHeadCounts(selectedHead);
   };
-  //글 작성 후 서버로 전송 함수
-  const handleSubmit = () => {
-    const postData = {
-      title: title,
-      content: content,
-      image: selectedFiles,
-      dateSelectData: { startDate: startDate, endDate: endDate },
-      genderAgeSelectData: { gender: gender, ageRange: ageRange },
-      travelMapData: travelMapData,
-    };
-    console.log("등록된 정보:", postData);
-    //~~최종 글서버전송
-    router.push("/"); //전송 후 메인페이지로 이동
+
+  const handleLocationSelect = (location) => {
+    setSelectedLocation(location);
   };
+
+  const handleSubmit = async () => {
+    try {
+      // 위치 정보 유무 확인 -> 없으면 처리 중단
+      if (!selectedLocation) {
+        console.error("위치 정보 없음");
+        return;
+      }
+
+      const textData = {
+        title,
+        content,
+        dateSelectData: { startDate, endDate },
+        genderAgeSelectData: { gender, ageRange },
+        headSelectData: { headCounts },
+        imagePaths: selectedFiles, // 이미지 경로 추가
+        location: selectedLocation,
+      };
+
+      console.log("전송할 텍스트 데이터:", textData);
+
+      const response = await fetch("/api/writeInput", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(textData),
+      });
+
+      if (response.ok) {
+        console.log("텍스트 데이터 전송 완료");
+        router.push("/"); // 텍스트 데이터 전송 완료 후 홈 페이지로 이동
+      } else {
+        console.error("텍스트 데이터 전송 실패");
+        alert("글 작성 오류 발생");
+      }
+    } catch (error) {
+      console.error("글 작성 오류", error);
+      alert("글 작성 오류 발생");
+    }
+  };
+
+  // 버튼 클릭 시 handleSubmit 함수 호출
+  const handleButtonClick = () => {
+    handleSubmit();
+  };
+
   return (
     <>
       <Navbar
@@ -132,17 +205,28 @@ export default function Write({ user }) {
             </div>
           ))}
         </div>
-        <h1 className={styles.writeTitle}><FaMapMarker className={styles.mapIcon} />어디로 여행가시나요?</h1>
-        <TravelMap />
-        <h2 className={styles.writeTitle}><MdDateRange className={styles.dateIcon} />언제 여행가시나요?</h2>
+        <h1 className={styles.writeTitle}>
+          <FaMapMarker className={styles.mapIcon} />
+          어디로 여행가시나요?
+        </h1>
+        <TravelMap onLocationSelect={handleLocationSelect} />
+        <h2 className={styles.writeTitle}>
+          <MdDateRange className={styles.dateIcon} />
+          언제 여행가시나요?
+        </h2>
         <div className={styles.selectBox}>
           <DateSelect handleData={handleDataSelection} dataType="date" />
         </div>
-        <h2 className={styles.writeTitle}><HiUserAdd className={styles.infoIcon} />몇 명과 동행하고 싶나요?</h2>
+        <h2 className={styles.writeTitle}>
+          <HiUserAdd className={styles.infoIcon} />몇 명과 동행하고 싶나요?
+        </h2>
         <div className={styles.selectBox}>
           <HeadcountSelect handleData={handleHeadData} dataType="headCounts" />
         </div>
-        <h2 className={styles.writeTitle}><IoIosPerson className={styles.infoIcon} />성별과 나이는?</h2>
+        <h2 className={styles.writeTitle}>
+          <IoIosPerson className={styles.infoIcon} />
+          성별과 나이는?
+        </h2>
         <div className={styles.selectBox}>
           <GenderAgeSelect
             handleData={handleGenderAgeData}
@@ -150,11 +234,11 @@ export default function Write({ user }) {
           />
         </div>
         <div className={styles.buttonBox}>
-          <button onClick={handleSubmit} className={styles.submitButton}>
+          <button onClick={handleButtonClick} className={styles.submitButton}>
             글 등록
           </button>
         </div>
-      </div >
+      </div>
       <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );

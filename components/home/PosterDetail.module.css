@@ -8,12 +8,15 @@
 }
 
 .items {
-  margin: 0px 15px;
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
 }
 
 .icon {
-  margin: 0px 6px;
+  margin-right: 6px;
   color: rgb(107, 106, 106);
+  margin-right: 5px;
 }
 
 @media screen and (max-width: 320px) {
@@ -32,5 +35,19 @@
 @media screen and (max-width: 270px) {
   .items {
     font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 429px) {
+  .infoBox {
+    align-items: flex-start;
+  }
+
+  .items {
+    margin: 5px 0;
+  }
+
+  .icon {
+    margin: 5px 0;
   }
 }
