@@ -13,14 +13,6 @@
   font-weight: 700;
 }
 
-.idButton {
-  right: 0;
-  position: absolute;
-  font-size: 30px;
-  top: 5px;
-  color: rgb(105, 104, 104);
-}
-
 .profileName {
   position: relative;
   display: flex;
