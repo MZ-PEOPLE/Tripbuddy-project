@@ -39,6 +39,24 @@
   color: white;
 }
 
+.saveButton {
+  width: 60px;
+  height: 20px;
+  padding: 10px 10px;
+  font-size: 16px;
+  background-color: #9cc1e9;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.saveButton:hover {
+  background-color: #5b93ce;
+  color: white;
+}
+
 /* 모바일 화면 */
 @media screen and (max-width: 767px) {
   .container {
