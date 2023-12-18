@@ -38,6 +38,17 @@ try {
     imagePaths: {
       type: [String],
     },
+    location: {
+      name: {
+        type: String,
+      },
+      latitude: {
+        type: Number,
+      },
+      longitude: {
+        type: Number,
+      },
+    },
   });
 
   WriteInput = mongoose.model("WriteInput", writeSchema);

@@ -11,6 +11,7 @@ export default async function handlePostCreation(req, res) {
       genderAgeSelectData,
       headSelectData,
       imagePaths,
+      location,
     } = req.body;
 
     // 필수 필드 유효성 검사
@@ -25,13 +26,18 @@ export default async function handlePostCreation(req, res) {
       !genderAgeSelectData.ageRange ||
       !headSelectData ||
       !headSelectData.headCounts ||
-      !imagePaths
+      !imagePaths ||
+      !location.name ||
+      !location.latitude ||
+      !location.longitude
     ) {
       console.log("필수 필드 누락");
       return res.status(400).json({
         message: "필수 필드가 누락되었습니다.",
       });
     }
+    const newWriteInput = new WritePost(location);
+    await newWriteInput.save();
 
     const newWrite = new WritePost({
       title,
@@ -40,6 +46,7 @@ export default async function handlePostCreation(req, res) {
       genderAgeSelectData,
       headSelectData,
       imagePaths,
+      location,
     });
 
     console.log("저장할 데이터:", newWrite);
