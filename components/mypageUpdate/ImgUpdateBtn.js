@@ -3,7 +3,7 @@ import { PiCameraDuotone } from "react-icons/pi";
 import { FaTrashAlt } from "react-icons/fa";
 import styles from "./ImgUpdateBtn.module.css";
 
-export default function ImgUpdateBtn({ profileImage }) {
+export default function ImgUpdateBtn({ profileImage, onUpdate }) {
   const fileInputRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(profileImage);
 
@@ -13,16 +13,20 @@ export default function ImgUpdateBtn({ profileImage }) {
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-      const imageDataUrl = reader.result;
-      setSelectedImage(imageDataUrl);
-    };
-    reader.readAsDataURL(selectedFile);
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const imageDataUrl = reader.result;
+        setSelectedImage(imageDataUrl);
+        onUpdate(selectedFile);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
   };
 
   const handleDeleteButtonClick = () => {
     setSelectedImage(null);
+    // 이미지 삭제 로직 추가 (필요한 경우)
   };
 
   return (
