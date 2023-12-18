@@ -1,0 +1,14 @@
+.container {
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submitBtn {
+  width: 80%;
+  height: 40px;
+  background-color: rgb(96, 150, 255);
+  border-radius: 5px;
+  color: white;
+}
