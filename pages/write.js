@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import DateSelect from "../components/user_write/DateSelect";
 import GenderAgeSelect from "../components/user_write/GenderAgeSelect";
+import HeadcountSelect from "@/components/user_write/HeadcountSelect";
 import Navbar from "../components/topbar/TopBar";
 import FooterBar from "../components/footerbar/FooterBar";
 import BackBtn from "@/components/topbar/BackButton";
@@ -9,16 +10,19 @@ import Logo from "@/components/topbar/Logo";
 import LoginCheck from "@/components/topbar/LoginCheck";
 import TravelMap from "@/components/user_write/TravelMap";
 import styles from "../components/user_write/write.module.css";
-import { FaCamera, FaRegTrashAlt, FaMapMarker } from "react-icons/fa";
+import { FaRegTrashAlt, FaMapMarker } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
+import { HiUserAdd } from "react-icons/hi";
+import { FcDocument } from "react-icons/fc";
 
-export default function Write() {
+export default function Write({ user }) {
   const [title, setTitle] = useState(""); //글제목
   const [content, setContent] = useState(""); //글내용
   const [selectedFiles, setSelectedFiles] = useState([]); //선택된 이미지파일 목록
   const [startDate, setStartDate] = useState(null); //여행 시작 날짜
   const [endDate, setEndDate] = useState(null); //여행 종료 날짜
+  const [headCounts, setHeadCounts] = useState(""); //인원수
   const [gender, setGender] = useState(""); //성별
   const [ageRange, setAgeRange] = useState(""); //나이대
   const [travelMapData, setTravelMapData] = useState(null); //여행지도 데이터
@@ -61,6 +65,9 @@ export default function Write() {
     setGender(selectedGender);
     setAgeRange(selectedAgeRange);
   };
+  const handleHeadData = ({ selectedHead }) => {
+    setHeadCounts(selectedHead);
+  };
   //글 작성 후 서버로 전송 함수
   const handleSubmit = () => {
     const postData = {
@@ -80,10 +87,13 @@ export default function Write() {
       <Navbar
         leftContent={<BackBtn />}
         middleContent={<Logo />}
-        rightContent={<LoginCheck />}
+        rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <div className={styles.writeContainer}>
-        <div className={styles.writeTitle}>게시글 작성</div>
+        <div className={styles.writeTitle}>
+          <FcDocument className={styles.mapIcon} />
+          게시글 작성
+        </div>
         <div>
           <input
             type="text"
@@ -95,7 +105,8 @@ export default function Write() {
         </div>
         <div>
           <textarea
-            placeholder="자신과 맞는 동행자를 쉽게 찾기위해 mbti,여행목적 등을 작성해주시면 좋아요!"
+            placeholder={`취향이 맞는 동행자를 쉽게 찾기위해 
+              mbti,여행목적 등을 작성해주시면 좋아요!`}
             value={content}
             onChange={handleContentChange}
             className={styles.textareaField}
@@ -127,6 +138,10 @@ export default function Write() {
         <div className={styles.selectBox}>
           <DateSelect handleData={handleDataSelection} dataType="date" />
         </div>
+        <h2 className={styles.writeTitle}><HiUserAdd className={styles.infoIcon} />몇 명과 동행하고 싶나요?</h2>
+        <div className={styles.selectBox}>
+          <HeadcountSelect handleData={handleHeadData} dataType="headCounts" />
+        </div>
         <h2 className={styles.writeTitle}><IoIosPerson className={styles.infoIcon} />성별과 나이는?</h2>
         <div className={styles.selectBox}>
           <GenderAgeSelect
@@ -140,7 +155,7 @@ export default function Write() {
           </button>
         </div>
       </div >
-      <FooterBar />
+      <FooterBar profileImage={user ? user.profileImage : null} />
     </>
   );
 }
