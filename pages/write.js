@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import DateSelect from "../components/user_write/DateSelect";
 import GenderAgeSelect from "../components/user_write/GenderAgeSelect";
@@ -10,11 +10,13 @@ import Logo from "@/components/topbar/Logo";
 import LoginCheck from "@/components/topbar/LoginCheck";
 import TravelMap from "@/components/user_write/TravelMap";
 import styles from "../components/user_write/write.module.css";
-import { FaRegTrashAlt, FaMapMarker } from "react-icons/fa";
+import { FaMapMarker } from "react-icons/fa";
+import { TiDelete } from "react-icons/ti";
 import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { HiUserAdd } from "react-icons/hi";
 import { FcDocument } from "react-icons/fc";
+import { BsPlusSquare } from "react-icons/bs";
 
 export default function Write({ user }) {
   const [title, setTitle] = useState(""); //글제목
@@ -30,6 +32,7 @@ export default function Write({ user }) {
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const router = useRouter(); //라우터 인스턴스
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     if (!user) {
@@ -71,14 +74,17 @@ export default function Write({ user }) {
         const uploadedImagePaths = data.imagePaths;
         console.log("이미지 업로드 성공:", uploadedImagePaths);
 
-        // 이미지 경로를 useState를 통해 업데이트
-        setSelectedFiles([...uploadedImagePaths]);
+        setSelectedFiles((prevFiles) => [...prevFiles, ...uploadedImagePaths]);
       } else {
         console.error("이미지 업로드 실패");
       }
     } catch (error) {
       console.error("이미지 업로드 중 에러:", error);
     }
+  };
+  // 파일 선택 창 열기
+  const openFileInput = () => {
+    fileInputRef.current.click();
   };
 
   //선택된 이미지 삭제 함수
@@ -202,22 +208,24 @@ export default function Write({ user }) {
           ></textarea>
         </div>
         <div className={styles.addPicture}>
-          <label
-            htmlFor="input-file"
-            className={styles.addButton}
-            onChange={handleImageUpload}
-          >
-            <input
-              type="file"
-              id="input-file"
-              multiple
-              className={styles.addButton}
-            />
-          </label>
+          <BsPlusSquare
+            className={styles.plusIcon}
+            onClick={openFileInput} // 클릭 이벤트 발생 시 이미지 업로드 함수 호출
+            style={{ cursor: "pointer" }} // 커서를 포인터로 변경하여 클릭 가능한 것처럼 보이게 함
+          />
+          <input
+            type="file"
+            ref={fileInputRef} // useRef로 생성한 ref를 할당하여 DOM에 접근할 수 있도록 함
+            style={{ display: "none" }} // 화면에 보이지 않도록 숨김
+            onChange={handleImageUpload} // 파일 선택 시 이미지 업로드 함수 호출
+          />
           {selectedFiles.map((image, id) => (
             <div className={styles.imageContainer} key={id}>
               <img src={image} alt={`${image}-${id}`} />
-              <FaRegTrashAlt onClick={() => handleImageDelete(id)} />
+              <TiDelete
+                className={styles.delIcon}
+                onClick={() => handleImageDelete(id)}
+              />
             </div>
           ))}
         </div>
