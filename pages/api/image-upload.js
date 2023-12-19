@@ -7,7 +7,7 @@ import verifyToken from "./utils/verifyToken";
 // 멀터 라이브러리로 저장하는 로직
 const upload = multer({
   storage: multer.diskStorage({
-    destination: "./public/uploads", // 저장경로
+    destination: "./public/img", // 저장경로
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname);
       crypto.randomBytes(16, (err, buf) => {
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 
     try {
       const decoded = verifyToken(req);
-      const profileImage = `/uploads/${req.file.filename}`; // 저장된 파일경로 + 파일이름
+      const profileImage = `/img/${req.file.filename}`; // 저장된 파일경로 + 파일이름
       await User.findOneAndUpdate({ id: decoded.userId }, { profileImage }, { new: true });
 
       res.status(200).json({ message: "업로드 성공" });
