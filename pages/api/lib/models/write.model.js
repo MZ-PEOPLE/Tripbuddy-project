@@ -49,6 +49,9 @@ try {
         type: Number,
       },
     },
+    userConfirm: {
+      type: Number,
+    },
   });
 
   WriteInput = mongoose.model("WriteInput", writeSchema);
