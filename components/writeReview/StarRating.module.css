@@ -5,10 +5,12 @@
 .defaultStar {
   color: #ccc;
   cursor: pointer;
+  font-size: 35px;
 }
 
 .yellowStar {
   color: #ffd700;
+
 }
 
 .yellowStar:hover {

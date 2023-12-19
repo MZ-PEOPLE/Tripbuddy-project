@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import styles from "./StarRating.module.css";
 
+
 const StarRating = ({ rating, onRatingChange }) => {
   const [hoveredRating, setHoveredRating] = useState(0);
 
@@ -22,10 +23,8 @@ const StarRating = ({ rating, onRatingChange }) => {
       {[1, 2, 3, 4, 5].map((index) => (
         <FaStar
           key={index}
-          size={24}
-          className={`${styles.defaultStar} ${
-            (hoveredRating || rating) >= index ? styles.yellowStar : ""
-          }`}
+          className={`${styles.defaultStar} ${(hoveredRating || rating) >= index ? styles.yellowStar : ""
+            }`}
           onMouseOver={() => handleMouseOver(index)}
           onMouseLeave={handleMouseLeave}
           onClick={() => handleClick(index)}
