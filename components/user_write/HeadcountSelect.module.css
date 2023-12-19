@@ -13,11 +13,17 @@
 .button {
   padding: 8px 16px;
   background-color: rgb(244, 244, 244);
+  background-color: rgb(244, 244, 244);
   cursor: pointer;
   width: 150px;
   height: 50px;
   text-align: center;
+  text-align: center;
   overflow: hidden;
+  border-radius: 100px;
+  margin: 8px 0px 15px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
+  font-size: 15px;
   border-radius: 100px;
   margin: 8px 0px 15px;
   box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
@@ -34,13 +40,18 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 20px;
+  border-radius: 20px;
   width: 150px;
+  text-align: center;
   text-align: center;
 }
 
 .headDropdown button {
   padding: 0;
+  padding: 0;
   background: none;
+  box-shadow: none;
+  margin: 0;
   box-shadow: none;
   margin: 0;
 }
