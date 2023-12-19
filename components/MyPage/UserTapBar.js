@@ -5,7 +5,6 @@ import UserReview from "./UserReview.js";
 import React, { useState } from "react";
 
 function UserTapBar({ userid }) {
-  console.log(userid, "UserTapBar.js");
   const [activeTab, setActiveTab] = useState(1);
 
   const handleTabChange = (tabNumber) => {
@@ -18,25 +17,19 @@ function UserTapBar({ userid }) {
       <div className={styles.tapBarBox}>
         <div className={styles.tapButtons}>
           <button
-            className={`${styles.button} ${
-              activeTab === 1 ? styles.activeTab : styles.tapFalse
-            }`}
+            className={`${styles.button} ${activeTab === 1 ? styles.activeTab : styles.tapFalse}`}
             onClick={() => handleTabChange(1)}
           >
             게시물
           </button>{" "}
           <button
-            className={`${styles.button} ${
-              activeTab === 2 ? styles.activeTab : styles.tapFalse
-            }`}
+            className={`${styles.button} ${activeTab === 2 ? styles.activeTab : styles.tapFalse}`}
             onClick={() => handleTabChange(2)}
           >
             동행
           </button>
           <button
-            className={`${styles.button} ${
-              activeTab === 3 ? styles.activeTab : styles.tapFalse
-            }`}
+            className={`${styles.button} ${activeTab === 3 ? styles.activeTab : styles.tapFalse}`}
             onClick={() => handleTabChange(3)}
           >
             여행 후기
@@ -44,7 +37,7 @@ function UserTapBar({ userid }) {
         </div>
       </div>
       <div className={styles.contentContainer}>
-        {activeTab === 1 && <UserPostContents />}
+        {activeTab === 1 && <UserPostContents userid={userid} />}
         {activeTab === 2 && <UserTogetherContents />}
         {activeTab === 3 && <UserReview />}
       </div>
