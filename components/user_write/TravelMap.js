@@ -19,6 +19,7 @@ const TravelMap = ({ onLocationSelect }) => {
     googleMapsApiKey: apiKey,
     libraries,
   });
+  const [selectedLocationName, setSelectedLocationName] = useState("");
 
   const autocompleteInput = useRef(null); // 자동완성 입력 요소
   const mapRef = useRef(); // 구글 맵 요소
@@ -41,6 +42,19 @@ const TravelMap = ({ onLocationSelect }) => {
           lat: place.geometry.location.lat(),
           lng: place.geometry.location.lng(),
         });
+
+        // 지역 이름을 추출하여 설정
+        const addressComponents = place.address_components;
+        let locationName = "";
+        for (let i = 0; i < addressComponents.length; i++) {
+          const component = addressComponents[i];
+          if (component.types.includes("locality")) {
+            locationName = component.long_name;
+            break;
+          }
+        }
+
+        setSelectedLocationName(locationName); // 선택된 지역 이름을 설정
         // Write 컴포넌트로 선택된 위치 전달
         onLocationSelect({
           name: place.formatted_address,
@@ -118,9 +132,18 @@ const TravelMap = ({ onLocationSelect }) => {
           검색
         </button>
       </div>
+      <div className={styles.tagContainer}>
+        {selectedLocationName && (
+          <div className={styles.tag}>{selectedLocationName}</div>
+        )}
+      </div>
 
       <GoogleMap
-        mapContainerStyle={{ width: "100%", height: "400px" }}
+        mapContainerStyle={{
+          width: "95%",
+          height: "200px",
+          borderRadius: "12px",
+        }}
         center={selectedLocation || defaultCenter}
         zoom={selectedLocation ? 15 : 8}
         onLoad={handleMapLoad}
