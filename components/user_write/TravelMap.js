@@ -152,6 +152,13 @@ const TravelMap = ({ onLocationSelect }) => {
         zoom={selectedLocation ? 15 : 8}
         onLoad={handleMapLoad}
         onClick={handleMapClick}
+        options={{
+          mapTypeControl: false,
+          mapTypeControlOptions: {
+            mapTypeIds: ["roadmap"],
+          },
+          streetViewControl: false,
+        }}
       >
         {selectedLocation && (
           <Marker

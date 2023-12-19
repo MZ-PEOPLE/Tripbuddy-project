@@ -45,6 +45,26 @@
   color: #00599e;
 }
 
+.plusIcon {
+  font-size: 40px;
+  color: #919191;
+  background-color: rgb(217, 217, 217);
+  margin-right: 10px;
+}
+
+.delIcon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden; /* 처음에는 숨김 */
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.imageContainer:hover .delIcon {
+  visibility: visible; /* 이미지에 마우스 호버 시 보이도록 함 */
+}
+
 .buttonBox {
   display: flex;
   justify-content: center;
@@ -79,13 +99,23 @@
   color: white;
 }
 
+.addPicture {
+  display: flex;
+  align-items: center;
+}
+
 .imageContainer {
-  max-width: 100px;
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* 이미지 간격 조절 */
+  position: relative; /* 상대적인 위치 설정 */
 }
 
 .imageContainer img {
-  width: 100%;
-  height: auto;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .textareaField {
