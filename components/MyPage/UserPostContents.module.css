@@ -27,26 +27,25 @@
 }
 
 .IconBox {
-  width: 70px;
   height: 20px;
   background-color: rgba(255, 255, 255);
   border-radius: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 5px 0px 5px 0px;
   position: absolute;
   top: 3px;
-  left: 3px;
+  margin: 0 3px;
 }
 
 .Icon {
-  font-size: 23px;
+  font-size: 20px;
   color: rgb(107, 106, 106);
 }
 
-.IconText {
-  font-size: 16px;
-  padding-top: 2px;
-  font-weight: 700;
+.iocation {
+  font-size: 12px;
+  /* padding: 2px 3px 2px 3px; */
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding: 0 10px 0 3px;
 }
