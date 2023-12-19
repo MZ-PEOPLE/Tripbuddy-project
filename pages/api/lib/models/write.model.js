@@ -49,7 +49,7 @@ try {
         type: Number,
       },
     },
-    userConfirm: {
+    userId: {
       type: Number,
     },
   });

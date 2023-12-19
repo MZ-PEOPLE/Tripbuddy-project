@@ -60,7 +60,7 @@ export default async function handleWriteInput(req, res) {
         headSelectData,
         imagePaths, // 이미지 경로 추가
         location,
-        userConfirm: userId,
+        userId,
       });
 
       console.log("MongoDB에 저장할 데이터:", writePost);
