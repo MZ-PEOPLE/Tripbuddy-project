@@ -1,6 +1,7 @@
 .KakaoBtn {
   width: 90%;
   background-color: rgb(255, 230, 0);
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
   border-radius: 15px;
   height: 100%;
   position: relative;
