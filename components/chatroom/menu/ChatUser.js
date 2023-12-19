@@ -1,5 +1,4 @@
 import styles from "./ChatUser.module.css"
-import Link from "next/link";
 import CheckBox from "./CheckBox";
 
 
@@ -24,21 +23,17 @@ export default function ChatUser() {
 
 
     return (
-        <chatlist>
-            <div className={styles.chatList}>
+        <>
+            <div className={styles.userContainer}>
                 {chatDataList.map((chatData) => (
                     <div key={chatData.id} className={styles.userFrame}>
-                        <Link href="/">
-                            <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />
-                        </Link>
-                        <div className={styles.chatContextFrame}>
-                            <div className={styles.profileId}>{chatData.profileId}</div>
-                        </div>
-                        <div className={styles.check}> <CheckBox /></div>
+                        <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />
+                        <div className={styles.profileId}>{chatData.profileId} </div>
+                        <CheckBox />
                     </div>
                 ))}
             </div>
-        </chatlist >
+        </ >
     );
 }
 

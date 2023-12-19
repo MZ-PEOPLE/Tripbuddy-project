@@ -7,10 +7,11 @@
 
 .reviewbtn {
     text-align: center;
-    background-color: rgb(225, 225, 225);
-    border-radius: 20px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 25px;
     width: fit-content;
-    font-size: 15px;
-    padding: 10px;
+    font-size: 20px;
+    padding: 20px 60px;
+    margin-top: 80px;
 
 }

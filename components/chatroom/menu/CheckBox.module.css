@@ -1,5 +1,8 @@
 .checkBox {
-    font-size: 20px;
+    font-size: 28px;
+    right: 0;
+    position: fixed;
+    margin: 20px 40px 0px 0px;
 
 
 }
