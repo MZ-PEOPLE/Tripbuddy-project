@@ -2,7 +2,7 @@ import styles from "./UserProfileDetail.module.css";
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
 
-function UserProfileDetail({ user }) {
+function UserProfileDetail({ user, myProfile = true }) {
   console.log(user, "UserProfileDetail");
 
   return (
@@ -26,12 +26,14 @@ function UserProfileDetail({ user }) {
         </div>
       </div>
 
-      <div className={styles.profileModify}>
-        <Link href="/mypage/update" className={styles.ModifyButton}>
-          <CgProfile alt="아이콘 자리" className={styles.ModifyIcon} />
-          <div className={styles.ModifyText}>프로필 수정</div>
-        </Link>
-      </div>
+      {myProfile && (
+        <div className={styles.profileModify}>
+          <Link href="/mypage/update" className={styles.ModifyButton}>
+            <CgProfile alt="아이콘 자리" className={styles.ModifyIcon} />
+            <div className={styles.ModifyText}>프로필 수정</div>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
