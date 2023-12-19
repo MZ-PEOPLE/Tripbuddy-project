@@ -66,9 +66,8 @@ function GenderAgeSelect({ handleData }) {
 
   return (
     <div className={styles.container}>
-
       <div className={styles.genderContainer}>
-        <div className={styles.infoTitle}>성별</div>
+        <div className={styles.infoTitle}></div>
         <button onClick={toggleGenderDropdown} className={styles.button}>
           {selectedGender || "성별 선택"}
         </button>
@@ -87,9 +86,8 @@ function GenderAgeSelect({ handleData }) {
         )}
       </div>
 
-
       <div className={styles.ageContainer}>
-        <div className={styles.infoTitle}>나이대</div>
+        <div className={styles.infoTitle}></div>
         <button onClick={toggleAgeDropdown} className={styles.button}>
           {selectedAgeRange || "나이대 선택"}
         </button>

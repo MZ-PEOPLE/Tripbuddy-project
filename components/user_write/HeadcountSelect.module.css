@@ -7,23 +7,27 @@
 .headContainer {
   position: relative;
   display: inline-block;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 10px;
 }
 
 .button {
   padding: 8px 16px;
-  background-color: #f8f8f8;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  background-color: rgb(244, 244, 244);
+  background-color: rgb(244, 244, 244);
   cursor: pointer;
   width: 150px;
   height: 50px;
-  text-align: left;
-  white-space: nowrap;
+  text-align: center;
+  text-align: center;
   overflow: hidden;
+  border-radius: 100px;
+  margin: 8px 0px 15px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
+  font-size: 15px;
+  border-radius: 100px;
+  margin: 8px 0px 15px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
+  font-size: 15px;
 }
 
 .headDropdown {
@@ -35,46 +39,23 @@
   flex-direction: column;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border-radius: 20px;
   width: 150px;
+  text-align: center;
+  text-align: center;
 }
 
 .headDropdown button {
-  padding: 10px;
-  border: none;
+  padding: 0;
+  padding: 0;
   background: none;
-  text-align: left;
-  cursor: pointer;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: calc(100% - 20px);
-  margin: 5px 10px;
+  box-shadow: none;
+  margin: 0;
+  box-shadow: none;
+  margin: 0;
 }
 
 .headDropdown button:hover {
   background-color: #f0f0f0;
-}
-
-/* 모바일 화면 */
-@media screen and (max-width: 767px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .headContainer {
-    margin: 10px 0;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .headDropdown {
-    top: initial;
-    left: initial;
-    width: 100%;
-  }
 }
