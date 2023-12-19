@@ -36,9 +36,7 @@ export default function ChatListComponent() {
         <div className={styles.chatList}>
             {chatDataList.map((chatData) => (
                 <div key={chatData.id} className={styles.userFrame}>
-                    <Link href="/chat">
-                        <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />
-                    </Link>
+                    <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />
                     <div className={styles.chatContextFrame}>
                         <top className={styles.topFrame}>
                             <div className={styles.profileId}>{chatData.profileId}</div>

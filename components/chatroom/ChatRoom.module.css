@@ -16,6 +16,7 @@
 
 .userFrame {
     display: flex;
+    margin-left: 5px;
 }
 
 .chatContextFrame {
