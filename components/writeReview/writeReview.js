@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./writeReview.module.css";
 import StarRating from "./StarRating";
+import { FaFaceSmileWink } from "react-icons/fa6";
 
 export default function WriteReview() {
   const [userDatas, setUserDatas] = useState([
@@ -43,6 +44,7 @@ export default function WriteReview() {
   return (
     <div className={styles.reviewContainer}>
       <div className={styles.reviewBox}>
+        <div className={styles.reviewTitle}>동행 만족도를 남겨주세요!<FaFaceSmileWink className={styles.winkIcon} /></div>
         {userDatas.map((userData, index) => (
           <div key={index} className={styles.userReview}>
             <div className={styles.userInfoBox}>

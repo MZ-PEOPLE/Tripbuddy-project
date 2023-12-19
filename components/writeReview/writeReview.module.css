@@ -1,8 +1,19 @@
 .reviewContainer {
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.reviewTitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.winkIcon {
+  margin-left: 10px;
+  color: rgb(242, 239, 42);
+  font-size: 25px;
 }
 
 .reviewBox {
@@ -11,20 +22,21 @@
 }
 
 .profilePic {
-  margin: 10px 0px 10px 0px;
-  width: 70px;
-  height: 70px;
+  margin-top: 10px;
+  margin-left: 25px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
 }
 
 .userInfoBox {
   display: flex;
-  justify-content: center;
+  margin-left: 10px;
 }
 
 .nameStarBox {
-  margin-top: 27px;
-  width: 40%;
+  margin: 25px 10px 10px 0px;
+  width: 60%;
 }
 
 .name {
@@ -35,15 +47,15 @@
 
 .writeReviewBox {
   display: flex;
-  justify-content: center;
-  padding: 5px 60px 15px 60px;
+  padding: 5px 60px 5px 60px;
+  width: 250px;
 }
 
 .reviewText {
   width: 100%;
   height: 100%;
   background-color: rgb(235, 235, 235);
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   border-radius: 20px;
   text-align: center;
 }
