@@ -7,7 +7,6 @@
 }
 
 
-
 .profileImg {
     width: 40px;
     height: 40px;
@@ -19,12 +18,9 @@
 }
 
 
-
 .chatContextFrame {
     display: flex;
     margin-top: 20px;
-
-
     display: flex;
     margin-top: 20px;
 
