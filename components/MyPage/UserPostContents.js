@@ -33,11 +33,17 @@ function UserPostContents({ userid }) {
           datas.map((data, index) => (
             <>
               <div className={styles.postContent}>
-                <img src={data.imagePaths[0]} alt="" className={styles.postContentPic} />
+                <img
+                  src={data.imagePaths[0]}
+                  alt=""
+                  className={styles.postContentPic}
+                />
                 <div className={styles.IconBoxContainer}>
                   <div className={styles.IconBox}>
                     <TiLocation className={styles.Icon} />
-                    <p className={styles.IconText}>{data.location.name.split(" ")[1]}</p>
+                    <p className={styles.iocation}>
+                      {data.location.name.split(" ")[1]}
+                    </p>
                   </div>
                 </div>
               </div>
