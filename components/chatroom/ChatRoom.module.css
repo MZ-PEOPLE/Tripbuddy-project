@@ -5,6 +5,7 @@
     border: 2px solid rgb(68, 179, 70);
     margin-top: 15px;
     margin-left: 5px;
+    box-shadow: rgba(17, 17, 26, 0.3) 0 2px 2px;
 }
 
 .profileButton {
