@@ -57,6 +57,20 @@
   color: white;
 }
 
+.tagContainer {
+
+  margin-bottom: 10px;
+}
+
+/* 선택된 지역 이름을 표시하는 태그 */
+.tag {
+  display: inline-block;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
 /* 모바일 화면 */
 @media screen and (max-width: 767px) {
   .container {
