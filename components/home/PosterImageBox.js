@@ -7,7 +7,7 @@ const PosterImage = ({ location, isLike, imgSrc }) => {
 
   return (
     <div className={styles.imgBox}>
-      <img src={imgSrc} className={styles.userImg}></img>
+      <img src={imgSrc[0]} className={styles.userImg}></img>
       <div className={styles.infoBox}>
         <div className={styles.locationsBox}>
           <TiLocation className={styles.marker_img} />
