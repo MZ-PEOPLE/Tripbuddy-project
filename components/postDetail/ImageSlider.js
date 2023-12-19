@@ -18,7 +18,7 @@ const ImageSlider = ({ imgs }) => {
         // 이미지를 여러개 받아 슬라이드 형식으로 보여줌, 한개일경우 안움직임
         <button key={index}>
           <div className={styles.imgBox}>
-            <img src={img.src} className={styles.img} />
+            <img src={img} className={styles.img} />
           </div>
         </button>
       ))}
