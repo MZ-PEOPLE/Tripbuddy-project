@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./MapBtn.module.css";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { HiMiniMapPin } from "react-icons/hi2";
 export default function MapBtn() {
     return (
         <div>
-            <button className={styles.mapIcon}><FaMapMarkerAlt /></button>
+            <button className={styles.mapIcon}><HiMiniMapPin /></button>
         </div >
     );
 

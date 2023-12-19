@@ -1,19 +1,17 @@
 .link {
     text-decoration: none;
-    display: block;
-    width: 100%;
     color: black;
 
 }
 
 
 .profileImg {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 15px;
     margin-right: 5px;
-    padding-right: 3px;
-
+    border: 2px solid rgb(68, 179, 70);
+    box-shadow: rgba(17, 17, 26, 0.3) 0 2px 2px;
 
 }
 
@@ -48,27 +46,21 @@
 
 .leftFrame {
     display: flex;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .rightFrame {
-    margin: 0 10px 0 0;
-}
-
-.leftFrame {
-    display: flex;
-    margin-top: 10px;
-}
-
-.rightFrame {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-right: 5px;
     position: fixed;
     right: 0;
+
 
 }
 
 .profileId {
-    font-size: 12px;
+    margin-top: 6px;
+    font-size: 15px;
     font-weight: 600;
 
 }
@@ -80,7 +72,7 @@
     border-radius: 20px;
     max-width: fit-content;
     text-align: center;
-    padding: 1px 3px;
+    padding: 1.5px 5px;
 
 }
 
@@ -89,7 +81,7 @@
     max-width: fit-content;
     text-align: center;
     color: grey;
-    padding-bottom: 3px;
+    padding-bottom: 8px;
 
 
 }

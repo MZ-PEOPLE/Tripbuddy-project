@@ -5,7 +5,7 @@
     width: fit-content;
     height: inherit;
     border-radius: 10px;
-    padding: 15px 20px;
+    padding: 10px 25px;
     text-decoration: none;
 
 
@@ -15,7 +15,7 @@
 
     display: flex;
     justify-content: flex-end;
-    margin: 200px 10px;
+    margin: 295px 20px;
     position: fixed;
     right: 0;
 
