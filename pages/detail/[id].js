@@ -67,6 +67,7 @@ const Detail = ({ user }) => {
             username: poster.writer.name,
             userImg: poster.writer.profileImage,
             timeStemp: `${startYear}.${startMonth}.${startDay} - ${endYear}.${endMonth}.${endDay}`,
+            _id: poster.writer._id,
           });
           setContents({
             // 메인 컨텐츠 영역을 담아줌
