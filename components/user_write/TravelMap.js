@@ -46,14 +46,18 @@ const TravelMap = ({ onLocationSelect }) => {
         // 지역 이름을 추출하여 설정
         const addressComponents = place.address_components;
         let locationName = "";
+        console.log(place.address_components);
         for (let i = 0; i < addressComponents.length; i++) {
           const component = addressComponents[i];
-          if (component.types.includes("locality")) {
+          if (
+            component.types.includes("locality") ||
+            component.types.includes("administrative_area_level_1")
+          ) {
             locationName = component.long_name;
             break;
           }
         }
-
+        console.log("Location Name:", locationName);
         setSelectedLocationName(locationName); // 선택된 지역 이름을 설정
         // Write 컴포넌트로 선택된 위치 전달
         onLocationSelect({
