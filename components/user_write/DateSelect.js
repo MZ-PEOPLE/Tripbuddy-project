@@ -28,7 +28,7 @@ function DateSelect({ handleData }) {
   return (
     <div className={styles.container}>
       <div className={styles.dateContainer}>
-        <label htmlFor="departureDate">가는날</label>
+        <label htmlFor="departureDate">출발하는 날</label>
         <DatePicker
           selected={startDate}
           onChange={handleStartDateChange}
@@ -41,7 +41,7 @@ function DateSelect({ handleData }) {
         />
       </div>
       <div className={styles.dateContainer}>
-        <label htmlFor="departureDate">오는날</label>
+        <label htmlFor="departureDate">도착하는 날</label>
         <DatePicker
           selected={endDate}
           onChange={handleEndDateChange}

@@ -16,9 +16,8 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #e7e7e7;
   border-radius: 5px;
-
 }
 
 .textareaField::placeholder {
@@ -34,13 +33,11 @@
 .mapIcon {
   font-size: 15px;
   color: rgb(102, 174, 212);
-
 }
 
 .dateIcon {
   font-size: 15px;
   color: rgb(255, 170, 0);
-
 }
 
 .infoIcon {
@@ -96,37 +93,45 @@
   resize: vertical;
 }
 
-
 /* 모바일 화면 */
+
+.writeContainer {
+  padding: 20px;
+}
+
+.inputField,
+.fileInput {
+  width: calc(100% - 20px);
+  height: 5px;
+  margin-bottom: 10px;
+  background-color: rgb(244, 244, 244);
+  box-shadow: rgba(109, 109, 109, 0.2) 0px 2px 4px;
+  border-radius: 30px;
+  font-size: 15px;
+}
+
+.textareaField {
+  width: calc(100% - 20px);
+  height: 200px;
+  margin-bottom: 10px;
+  background-color: rgb(244, 244, 244);
+  box-shadow: rgba(109, 109, 109, 0.2) 0px 2px 4px;
+  border-radius: 12px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.buttonBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.selectBox {
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 767px) {
-  .writeContainer {
-    padding: 10px;
-  }
-
-  .inputField,
-  .textareaField,
-  .fileInput {
-    width: calc(100% - 20px);
-    padding: 10p;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    background-color: #f8f8f8;
-    border-radius: 5px;
-    font-size: 16px;
-
-
-
-  }
-
-  .buttonBox {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-  }
-
-  .selectBox {
-    display: flex;
-    justify-content: center;
-  }
 }
