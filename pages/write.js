@@ -29,6 +29,7 @@ export default function Write({ user }) {
   const [name, setName] = useState("");
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
+  const [authUser, setAuthUser] = useState(null);
   const router = useRouter(); //라우터 인스턴스
 
   useEffect(() => {
@@ -72,7 +73,7 @@ export default function Write({ user }) {
         console.log("이미지 업로드 성공:", uploadedImagePaths);
 
         // 이미지 경로를 useState를 통해 업데이트
-        setSelectedFiles(uploadedImagePaths);
+        setSelectedFiles([...uploadedImagePaths]);
       } else {
         console.error("이미지 업로드 실패");
       }
@@ -109,13 +110,50 @@ export default function Write({ user }) {
     setSelectedLocation(location);
   };
 
+  const getUserInfo = async () => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // 토큰이 없으면 사용자 정보를 가져올 수 없음
+        return null;
+      }
+
+      const response = await fetch("/api/logined", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.ok) {
+        const userData = await response.json();
+        setAuthUser(userData); // 가져온 사용자 정보를 상태에 저장
+        return userData; // 사용자 정보 반환
+      } else {
+        throw new Error("사용자 정보를 가져오지 못했습니다.");
+      }
+    } catch (error) {
+      console.error("사용자 정보 가져오기 오류:", error);
+      return null;
+    }
+  };
+
   const handleSubmit = async () => {
     try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        // 토큰이 없으면 로그인 페이지로 이동
+        router.push("/login");
+        return;
+      }
+
       // 위치 정보 유무 확인 -> 없으면 처리 중단
       if (!selectedLocation) {
         console.error("위치 정보 없음");
         return;
       }
+      // 사용자 정보 가져오기
+      const authUser = await getUserInfo();
 
       const textData = {
         title,
@@ -125,7 +163,14 @@ export default function Write({ user }) {
         headSelectData: { headCounts },
         imagePaths: selectedFiles, // 이미지 경로 추가
         location: selectedLocation,
+        userConfirm: authUser.id,
       };
+
+      if (!authUser) {
+        // 사용자 정보가 없으면 로그인 페이지로 이동
+        router.push("/login");
+        return;
+      }
 
       console.log("전송할 텍스트 데이터:", textData);
 
@@ -133,6 +178,7 @@ export default function Write({ user }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(textData),
       });
