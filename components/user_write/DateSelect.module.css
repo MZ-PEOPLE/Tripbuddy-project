@@ -4,14 +4,11 @@
   align-items: center;
 }
 
-
-
 .dateContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px;
-
 }
 
 .selectedDate {
@@ -20,35 +17,14 @@
 }
 
 .myDatePicker {
+  padding: 8px 16px;
+  cursor: pointer;
   width: 150px;
   height: 25px;
-  border: 1px solid #ccc;
-  background-color: #f8f8f8;
-  border-radius: 5px;
   text-align: center;
-}
-
-/* 모바일 화면 */
-@media screen and (max-width: 767px) {
-  .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-  }
-
-  .dateContainer {
-    margin: 5px;
-  }
-
-  .selectedDate {
-    font-size: 16px;
-    margin-bottom: 8px;
-  }
-
-  .myDatePicker {
-    padding: 6px;
-    font-size: 14px;
-    margin-top: 10px;
-  }
+  border-radius: 100px;
+  background-color: rgb(244, 244, 244);
+  margin: 8px 0px 15px;
+  box-shadow: rgba(17, 17, 26, 0.2) 0px 2px 4px;
+  font-size: 15px;
 }
