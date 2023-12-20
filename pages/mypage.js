@@ -1,10 +1,10 @@
 import MyPageProfileDetail from "@/components/MyPage/UserProfileDetail";
 import MyPageUserTapBar from "@/components/MyPage/UserTapBar";
 import BackBtn from "@/components/topbar/BackButton";
-import LoginCheck from "@/components/topbar/LoginCheck";
 import Topbar from "@/components/topbar/TopBar";
 import { useRouter } from "next/router";
 import FooterBar from "@/components/footerbar/FooterBar";
+import Gearbar from "@/components/topbar/Gearbar";
 
 export default function MyPageContainer({ user }) {
   const router = useRouter();
@@ -15,11 +15,7 @@ export default function MyPageContainer({ user }) {
   }
   return (
     <>
-      <Topbar
-        leftContent={<BackBtn />}
-        middleContent={user.name + "님의 마이페이지"}
-        rightContent={<LoginCheck isLogin={user ? true : false} />}
-      />
+      <Topbar leftContent={<BackBtn />} middleContent={user.name + "님의 마이페이지"} rightContent={<Gearbar />} />
       <MyPageProfileDetail user={user} />
       <MyPageUserTapBar userid={user.id} />
       <FooterBar profileImage={user ? user.profileImage : null} />
