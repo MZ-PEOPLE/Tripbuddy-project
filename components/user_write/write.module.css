@@ -28,6 +28,9 @@
 .textareaField {
   /* 줄간격 늘림 */
   line-height: 1.2;
+  resize: none !important;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .mapIcon {
