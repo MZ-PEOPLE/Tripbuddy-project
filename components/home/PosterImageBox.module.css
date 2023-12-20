@@ -1,7 +1,7 @@
 .imgBox {
   display: flex;
   position: relative;
-  height: 20vh;
+  height: 200px;
 }
 
 .userImg {
