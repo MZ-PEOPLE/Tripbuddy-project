@@ -49,7 +49,7 @@
 
 .ageDropdown {
   position: absolute;
-  top: calc(-280% - 5px); /* 선택 버튼 위에 위치하도록 수정 */
+  top: calc(-285% - 5px); /* 선택 버튼 위에 위치하도록 수정 */
   left: 50%; /* 가운데 정렬 */
   transform: translateX(-50%); /* 가운데 정렬을 위한 보정 */
   z-index: 0;
