@@ -1,14 +1,14 @@
 import styles from "./LoginContents.module.css";
-import Logo from "../topbar/Logo";
 import { ImAirplane } from "react-icons/im";
 
+const logoImg = "/img/logo.png";
 const ImgSrc = "/img/loginImg.png";
 
 function LoginContents() {
   return (
     <div className={styles.container}>
       <div className={styles.imageBox}>
-        <Logo />
+        <img src={logoImg} className={styles.logo} />
         <ImAirplane className={styles.icon} />
       </div>
       <div className={styles.loginImage}>
