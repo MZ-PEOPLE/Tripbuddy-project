@@ -217,6 +217,7 @@ export default function Write({ user }) {
             type="file"
             ref={fileInputRef} // useRef로 생성한 ref를 할당하여 DOM에 접근할 수 있도록 함
             style={{ display: "none" }} // 화면에 보이지 않도록 숨김
+            multiple
             onChange={handleImageUpload} // 파일 선택 시 이미지 업로드 함수 호출
           />
           {selectedFiles.map((image, id) => (
