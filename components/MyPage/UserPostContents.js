@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./UserPostContents.module.css";
 import { TiLocation } from "react-icons/ti";
+import Link from "next/link";
 
 function UserPostContents({ userid }) {
   const [datas, setDatas] = useState(null);
@@ -31,23 +32,17 @@ function UserPostContents({ userid }) {
       <div className={styles.post}>
         {datas &&
           datas.map((data, index) => (
-            <>
-              <div className={styles.postContent}>
-                <img
-                  src={data.imagePaths[0]}
-                  alt=""
-                  className={styles.postContentPic}
-                />
+            <div className={styles.postContent}>
+              <Link href={`/detail/${data._id}`}>
+                <img src={data.imagePaths[0]} alt="" className={styles.postContentPic} />
                 <div className={styles.IconBoxContainer}>
                   <div className={styles.IconBox}>
                     <TiLocation className={styles.Icon} />
-                    <p className={styles.iocation}>
-                      {data.location.name.split(" ")[1]}
-                    </p>
+                    <p className={styles.iocation}>{data.location.name.split(" ")[1]}</p>
                   </div>
                 </div>
-              </div>
-            </>
+              </Link>
+            </div>
           ))}
       </div>
     </div>
