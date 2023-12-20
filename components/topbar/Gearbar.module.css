@@ -1,0 +1,44 @@
+.gear {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+}
+
+.container > :first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.container > :last-child {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.container > :not(:last-child) {
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.logout {
+  cursor: pointer;
+  width: 240px;
+  height: 48px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
