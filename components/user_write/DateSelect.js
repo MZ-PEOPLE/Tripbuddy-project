@@ -26,33 +26,35 @@ function DateSelect({ handleData }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.dateContainer}>
-        <label htmlFor="departureDate">출발하는 날</label>
-        <DatePicker
-          selected={startDate}
-          onChange={handleStartDateChange}
-          selectsStart
-          startDate={startDate}
-          endDate={endDate}
-          dateFormat="yyyy년 MM월 dd일"
-          className={styles.myDatePicker}
-          calendarClassName={styles.datePickerCalendar}
-        />
-      </div>
-      <div className={styles.dateContainer}>
-        <label htmlFor="departureDate">도착하는 날</label>
-        <DatePicker
-          selected={endDate}
-          onChange={handleEndDateChange}
-          selectsEnd
-          startDate={startDate}
-          endDate={endDate}
-          minDate={startDate}
-          dateFormat="yyyy년 MM월 dd일"
-          className={styles.myDatePicker}
-          calendarClassName={styles.datePickerCalendar}
-        />
+    <div className={styles.containerAll}>
+      <div className={styles.container}>
+        <div className={styles.dateContainer}>
+          <label htmlFor="departureDate">출발하는 날</label>
+          <DatePicker
+            selected={startDate}
+            onChange={handleStartDateChange}
+            selectsStart
+            startDate={startDate}
+            endDate={endDate}
+            dateFormat="yyyy년 MM월 dd일"
+            className={styles.myDatePicker}
+            calendarClassName={styles.datePickerCalendar}
+          />
+        </div>
+        <div className={styles.dateContainer}>
+          <label htmlFor="departureDate">도착하는 날</label>
+          <DatePicker
+            selected={endDate}
+            onChange={handleEndDateChange}
+            selectsEnd
+            startDate={startDate}
+            endDate={endDate}
+            minDate={startDate}
+            dateFormat="yyyy년 MM월 dd일"
+            className={styles.myDatePicker}
+            calendarClassName={styles.datePickerCalendar}
+          />
+        </div>
       </div>
     </div>
   );
