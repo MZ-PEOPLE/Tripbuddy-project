@@ -64,6 +64,7 @@ const TravelMap = ({ onLocationSelect }) => {
           name: place.formatted_address,
           latitude: place.geometry.location.lat(),
           longitude: place.geometry.location.lng(),
+          locationName: locationName,
         });
       }
     });
@@ -86,6 +87,7 @@ const TravelMap = ({ onLocationSelect }) => {
       name: "",
       latitude: event.latLng.lat(),
       longitude: event.latLng.lng(),
+      locationName: locationName,
     });
   };
 
@@ -111,6 +113,7 @@ const TravelMap = ({ onLocationSelect }) => {
           name: data.results[0].formatted_address,
           latitude: location.lat,
           longitude: location.lng,
+          locationName: locationName,
         });
       } else {
         console.log("결과를 찾을 수 없음");

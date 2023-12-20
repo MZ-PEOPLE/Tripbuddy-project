@@ -2,9 +2,9 @@ import WritePost from "./lib/models/write.model";
 
 export default async function saveLocation(req, res) {
   try {
-    const { name, latitude, longitude } = req.body;
+    const { name, latitude, longitude, locationName } = req.body;
 
-    if (!name || !latitude || !longitude) {
+    if (!name || !latitude || !longitude || !locationName) {
       return res.status(400).json({
         message: "필수 필드가 누락되었습니다.",
       });
@@ -15,6 +15,7 @@ export default async function saveLocation(req, res) {
         name,
         latitude,
         longitude,
+        locationName,
       },
     });
 

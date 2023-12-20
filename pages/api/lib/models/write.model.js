@@ -48,6 +48,9 @@ try {
       longitude: {
         type: Number,
       },
+      locationName: {
+        type: String,
+      },
     },
     userId: {
       type: Number,
