@@ -19,9 +19,6 @@
 .chatContextFrame {
     display: flex;
     margin-top: 20px;
-    display: flex;
-    margin-top: 20px;
-
 
 }
 
@@ -29,13 +26,12 @@
     font-size: 12px;
     text-overflow: ellipsis;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* 두 줄 이상이면 가리기 */
-    -webkit-box-orient: vertical;
     margin-right: 3px;
     margin-top: 5px;
-    width: 90%;
+    width: 70%;
+    position: fixed;
+
+
 }
 
 .userFrame {
@@ -74,6 +70,7 @@
     text-align: center;
     padding: 1.5px 5px;
 
+
 }
 
 .chatTime {
@@ -86,7 +83,7 @@
 
 }
 
-.chatTime,
+
 .unreadCount {
     margin-left: auto;
 }

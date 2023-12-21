@@ -45,7 +45,8 @@ export default function ChatListComponent() {
               <img className={styles.profileImg} src={chatData.profileImg} alt="Profile" />
               <div className={styles.profileContext}>
                 <div className={styles.profileId}>{chatData.profileId}</div>
-                <div className={styles.chatContext}>{chatData.chatContext}</div>
+                <div className={styles.chatContext}>{chatData.chatContext}
+                </div>
               </div>
             </div>
             <div className={styles.rightFrame}>
