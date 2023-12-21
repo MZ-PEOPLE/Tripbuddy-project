@@ -1,18 +1,5 @@
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    margin-top: 25px;
-}
-
-.container {
     max-width: 800px;
     margin: 0 auto;
     margin-top: 25px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%;
-
-    }
 }
