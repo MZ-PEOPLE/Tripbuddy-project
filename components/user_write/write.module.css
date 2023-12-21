@@ -50,22 +50,26 @@
 
 .plusIcon {
   font-size: 40px;
-  color: #919191;
-  background-color: rgb(217, 217, 217);
+  color: #575757;
+  background-color: rgb(244, 244, 244);
   margin-right: 10px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .delIcon {
   position: absolute;
   top: 0;
   right: 0;
-  visibility: hidden; /* 처음에는 숨김 */
+  visibility: hidden;
+  /* 처음에는 숨김 */
   cursor: pointer;
   font-size: 40px;
 }
 
 .imageContainer:hover .delIcon {
-  visibility: visible; /* 이미지에 마우스 호버 시 보이도록 함 */
+  visibility: visible;
+  /* 이미지에 마우스 호버 시 보이도록 함 */
 }
 
 .buttonBox {
@@ -110,8 +114,10 @@
 .imageContainer {
   display: flex;
   align-items: center;
-  margin-right: 10px; /* 이미지 간격 조절 */
-  position: relative; /* 상대적인 위치 설정 */
+  margin-right: 10px;
+  /* 이미지 간격 조절 */
+  position: relative;
+  /* 상대적인 위치 설정 */
 }
 
 .imageContainer img {
@@ -166,5 +172,4 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 767px) {
-}
+@media screen and (max-width: 767px) {}
