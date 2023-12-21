@@ -15,8 +15,10 @@
 
     display: flex;
     justify-content: flex-end;
-    margin: 295px 20px;
+    bottom: 0;
     position: fixed;
+    margin-bottom: 60px;
+    margin-right: 10px;
     right: 0;
 
 }
