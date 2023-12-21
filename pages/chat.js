@@ -8,12 +8,11 @@ export default function ChatList({ user }) {
     <>
       <Topbar
         leftContent={<BackBtn />}
-        middleContent={"채팅"}
+        middleContent={"채팅 (실험실)"}
         rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <ChatListComponent />
       <FooterBar />
     </>
-  )
-
+  );
 }

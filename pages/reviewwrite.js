@@ -9,7 +9,7 @@ export default function writeReview({ user }) {
     <>
       <Topbar
         leftContent={<BackBtn />}
-        middleContent={"여행 리뷰 작성"}
+        middleContent={"여행 리뷰 작성 (실험실)"}
         rightContent={<LoginCheck isLogin={user ? true : false} />}
       />
       <Review />
