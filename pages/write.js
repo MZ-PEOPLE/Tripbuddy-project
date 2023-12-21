@@ -16,7 +16,7 @@ import { MdDateRange } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";
 import { HiUserAdd } from "react-icons/hi";
 import { FcDocument } from "react-icons/fc";
-import { BsPlusSquare } from "react-icons/bs";
+import { FiCamera } from "react-icons/fi";
 
 export default function Write({ user }) {
   const [title, setTitle] = useState(""); //글제목
@@ -208,7 +208,7 @@ export default function Write({ user }) {
           ></textarea>
         </div>
         <div className={styles.addPicture}>
-          <BsPlusSquare
+          <FiCamera
             className={styles.plusIcon}
             onClick={openFileInput} // 클릭 이벤트 발생 시 이미지 업로드 함수 호출
             style={{ cursor: "pointer" }} // 커서를 포인터로 변경하여 클릭 가능한 것처럼 보이게 함
