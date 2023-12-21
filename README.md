@@ -1,4 +1,4 @@
-## 🌏트립버디 :airplane: 
+## 🌏Tripbuddy :airplane: 
 <img src="https://github.com/77JY/Tripbuddy-project/assets/143465467/fb49c88b-edef-465c-bbc6-ad273464e592" width="200" height="150" />
 
 
