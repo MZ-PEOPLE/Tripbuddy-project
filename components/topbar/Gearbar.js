@@ -22,8 +22,14 @@ export default function Gearbar() {
       <PiGearLight className={styles.gear} onClick={gearClickHandler} />
       {gear ? (
         <div className={styles.container} onClick={gearClickHandler}>
+          <div className={styles.logout}>
+            <span>좋아요 누른 게시물 (실험실)</span>
+          </div>
+          <div className={styles.logout}>
+            <span>설정 및 개인정보 (실험실)</span>
+          </div>
           <div className={styles.logout} onClick={logoutClickHandler}>
-            <span>로그아웃</span>
+            <div>로그아웃</div>
           </div>
           <div className={styles.logout}>
             <span>취소</span>
