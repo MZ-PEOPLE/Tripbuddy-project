@@ -17,22 +17,30 @@ function UserTapBar({ userid }) {
       <div className={styles.tapBarBox}>
         <div className={styles.tapButtons}>
           <button
-            className={`${styles.button} ${activeTab === 1 ? styles.activeTab : styles.tapFalse}`}
+            className={`${styles.button} ${
+              activeTab === 1 ? styles.activeTab : styles.tapFalse
+            }`}
             onClick={() => handleTabChange(1)}
           >
             게시물
           </button>{" "}
           <button
-            className={`${styles.button} ${activeTab === 2 ? styles.activeTab : styles.tapFalse}`}
+            className={`${styles.button} ${
+              activeTab === 2 ? styles.activeTab : styles.tapFalse
+            }`}
             onClick={() => handleTabChange(2)}
           >
             동행
           </button>
           <button
-            className={`${styles.button} ${activeTab === 3 ? styles.activeTab : styles.tapFalse}`}
+            className={`${styles.button} ${
+              activeTab === 3 ? styles.activeTab : styles.tapFalse
+            }`}
             onClick={() => handleTabChange(3)}
           >
             여행 후기
+            <br />
+            (실험실)
           </button>{" "}
         </div>
       </div>
