@@ -1,5 +1,6 @@
 import GoogleMaps from "./GoogleMaps";
 import styles from "./ContentBox.module.css";
+import React from "react";
 
 const ContentBox = ({ items }) => {
   const { text, longitude, latitude } = items;
@@ -7,7 +8,16 @@ const ContentBox = ({ items }) => {
 
   return (
     <div className={styles.Container}>
-      {text ? <div className={styles.textBox}>{text}</div> : null}
+      {text ? (
+        <div className={styles.textBox}>
+          {text.split("\n").map((line, index) => (
+            <React.Fragment key={index}>
+              {line}
+              {index !== text.split("\n").length - 1 && <br />}{" "}
+            </React.Fragment>
+          ))}
+        </div>
+      ) : null}
       {longitude ? (
         <div className={styles.locationBox}>
           <GoogleMaps location={location} />
